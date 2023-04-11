@@ -21,6 +21,21 @@ import src.commands.F14_Save                    as F14
 import src.commands.F15_Help                    as F15
 import src.commands.F16_Exit                    as F16
 
+# DEFINISI DAN SPESIFIKASI VARIABEL GLOBAL
+"""
+UserActive : {  loginsession : Boolean
+                username     : String
+                password     : String
+                role         : String }
+User       : Array of  {  username     : String
+                          password     : String
+                          role         : String }
+                          
+UserInfo        : UserActive  = Berfungsi sebagai variabel penentu useraccount yang login
+MainDirectory   : String      = Berfungsi sebagai penentu lokasi data yang digunakan
+UserData        : User        = Data utama autentikasi login
+"""
+
 # INISIALISASI
 UserInfo = [False, "Null", "Null", "Null"]
 
@@ -34,11 +49,16 @@ if args.SaveGame:
     os.system('cls')
     print("Loading...")
     MainDirectory = 'src/SaveGame/'+args.SaveGame
-    MainData = F13.Load(MainDirectory)
+
+    # LOADING GLOBAL DATA
+    UserData = F13.load(MainDirectory)
+    CandiData = F13.load(MainDirectory)
+    BahanBangunanData = F13.load(MainDirectory)
+
     time.sleep(2)
     os.system('cls')
     print("Selamat datang di program “Manajerial Candi”\nSilahkan masukkan username Anda")
-    F01.login(UserInfo)
+    UserInfo = F01.login(UserInfo)
   else:
     print('Folder "'+args.SaveGame+'" tidak ditemukan.')
 else:

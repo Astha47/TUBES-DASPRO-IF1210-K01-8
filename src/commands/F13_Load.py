@@ -1,2 +1,2 @@
-def Load(MainDirectory):
+def load(MainDirectory):
     return
