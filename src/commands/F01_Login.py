@@ -1,2 +1,2 @@
-def halo():
-    print("Hallo")
+def login(UserInfo):
+    return UserInfo
