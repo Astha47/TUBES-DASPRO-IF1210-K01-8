@@ -37,7 +37,7 @@ UserData        : User        = Data utama autentikasi login
 """
 
 # INISIALISASI
-UserInfo = [False, "Null", "Null", "Null"]
+UserInfo = [False, "", "", ""]
 Run = False
 
 # PARSER
@@ -52,9 +52,18 @@ if args.SaveGame:
     MainDirectory = 'src/SaveGame/'+args.SaveGame
 
     # LOADING GLOBAL DATA
-    UserData = F13.load(MainDirectory)
-    CandiData = F13.load(MainDirectory)
-    BahanBangunanData = F13.load(MainDirectory)
+
+    # Data Jumlah Baris dan Kolom
+    BarisUser = 102
+    KolomUser = 3
+    BarisCandi = 100
+    KolomCandi = 5
+    BarisBBangunan = 0
+    KolomBBangunan = 0
+
+    UserData = F13.load(MainDirectory+"/user.csv", BarisUser, KolomUser)
+    CandiData = F13.load(MainDirectory+"/candi.csv", BarisCandi, KolomCandi)
+    BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan)
     Run = True
 
     time.sleep(2)
