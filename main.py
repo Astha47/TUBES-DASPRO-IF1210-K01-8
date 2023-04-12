@@ -30,7 +30,7 @@ UserActive : {  loginsession : Boolean
 User       : Array of  {  username     : String
                           password     : String
                           role         : String }
-                          
+
 UserInfo        : UserActive  = Berfungsi sebagai variabel penentu useraccount yang login
 MainDirectory   : String      = Berfungsi sebagai penentu lokasi data yang digunakan
 UserData        : User        = Data utama autentikasi login
@@ -65,7 +65,7 @@ else:
   print("Tidak ada nama folder yang diberikan!")
   print()
   print("Usage: python main.py <nama_folder>")
-
+ 
 
 while True:
   command = input()
