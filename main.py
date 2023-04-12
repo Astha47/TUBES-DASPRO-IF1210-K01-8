@@ -38,10 +38,11 @@ UserData        : User        = Data utama autentikasi login
 
 # INISIALISASI
 UserInfo = [False, "Null", "Null", "Null"]
+Run = False
 
 # PARSER
 parser = argparse.ArgumentParser()
-parser.add_argument("SaveGame", help="Nama dari direktori penyimpanan sesi")
+parser.add_argument("SaveGame", nargs="?", default="",help="Nama dari direktori penyimpanan sesi")
 args = parser.parse_args()
 
 if args.SaveGame: 
@@ -54,6 +55,7 @@ if args.SaveGame:
     UserData = F13.load(MainDirectory)
     CandiData = F13.load(MainDirectory)
     BahanBangunanData = F13.load(MainDirectory)
+    Run = True
 
     time.sleep(2)
     os.system('cls')
@@ -65,9 +67,9 @@ else:
   print("Tidak ada nama folder yang diberikan!")
   print()
   print("Usage: python main.py <nama_folder>")
- 
 
-while True:
+
+while Run:
   command = input()
 
   if command == "login":
