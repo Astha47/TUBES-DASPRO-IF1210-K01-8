@@ -53,18 +53,30 @@ if args.SaveGame:
 
     # LOADING GLOBAL DATA
 
+    # PERHATIANN!!!
+    """
+    Bentuk data UserData, CandiData, dan BahanBangunan Data akan berbentuk sama persis seperti
+    tabel pada file csv dengan indeks baris pertama adalah header (header masuk dalam baris)
+    """
+
+
     # Data Jumlah Baris dan Kolom
-    BarisUser = 102
+    BarisUser = 103
     KolomUser = 3
-    BarisCandi = 100
+    BarisCandi = 101
     KolomCandi = 5
-    BarisBBangunan = 0
-    KolomBBangunan = 0
+    BarisBBangunan = 101
+    KolomBBangunan = 3
 
     UserData = F13.load(MainDirectory+"/user.csv", BarisUser, KolomUser) # Matrix
     CandiData = F13.load(MainDirectory+"/candi.csv", BarisCandi, KolomCandi) # Matrix
     BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan) # Matrix
     Run = True
+
+    # DEBUG
+    #print(UserData)
+    #print(CandiData)
+    #print(BahanBangunanData)
 
     time.sleep(2)
     os.system('cls')
