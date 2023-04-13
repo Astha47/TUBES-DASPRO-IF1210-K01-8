@@ -61,15 +61,15 @@ if args.SaveGame:
     BarisBBangunan = 0
     KolomBBangunan = 0
 
-    UserData = F13.load(MainDirectory+"/user.csv", BarisUser, KolomUser)
-    CandiData = F13.load(MainDirectory+"/candi.csv", BarisCandi, KolomCandi)
-    BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan)
+    UserData = F13.load(MainDirectory+"/user.csv", BarisUser, KolomUser) # Matrix
+    CandiData = F13.load(MainDirectory+"/candi.csv", BarisCandi, KolomCandi) # Matrix
+    BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan) # Matrix
     Run = True
 
     time.sleep(2)
     os.system('cls')
     print("Selamat datang di program “Manajerial Candi”\nSilahkan masukkan username Anda")
-    UserInfo = F01.login(UserInfo)
+    UserInfo = F01.login(UserInfo, UserData)
   else:
     print('Folder "'+args.SaveGame+'" tidak ditemukan.')
 else:
@@ -82,7 +82,7 @@ while Run:
   command = input()
 
   if command == "login":
-    UserInfo = F01.login(UserInfo)
+    UserInfo = F01.login(UserInfo,UserData)
   elif command == "logout":
     UserInfo = F02.logout(UserInfo)
   elif command == "summonjin":

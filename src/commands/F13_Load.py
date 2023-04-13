@@ -1,4 +1,4 @@
-def loadCSV(FileDirectory,baris,kolom):
+def load(FileDirectory,baris,kolom):
 
     # Inisalisasi 
     Array = [["" for i in range(kolom)] for j in range(baris)]
@@ -7,6 +7,7 @@ def loadCSV(FileDirectory,baris,kolom):
     RawString = file.read()
     file.close()
 
+    
     # Memisahkan per-line
     jumlahBaris = 0 # Menghitung jumlah baris dalam file terlebih dahulu
     for i in range(len(RawString)):
@@ -25,13 +26,29 @@ def loadCSV(FileDirectory,baris,kolom):
             currentText += RawString[i]
 
     # Memisahkan per kolom
-    # hitung semicolon
-
-    nsemicolon = 0
+    """
+    # hitung kolom
+    jumlahKolom = 1
     for i in range(len(isiperline[0])):
         print(isiperline[0][i])
         if isiperline[0][i] == ";":
-            nsemicolon += 1
+            jumlahKolom += 1
+    """
+    
+    # Masukkan isi Array
+    for i in range(jumlahBaris):
+        kata = ""
+        iterasi = 0
+        for j in range(len(isiperline[i])):
+            if isiperline[i][j] != ';':
+                kata += isiperline[i][j]
+            else:
+                Array[i][iterasi] = kata
+                iterasi +=1
+                kata = ""
+            Array[i][iterasi] = kata
+
+
     return Array
 
-loadCSV("",5,3)
+#print(load("src/SaveGame/game01/user.csv",3,3))
