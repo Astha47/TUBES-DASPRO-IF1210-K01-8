@@ -35,4 +35,4 @@ def kumpul():
     material = [pasir,batu,air]
     hasil = "Jin menemukan {} pasir, {} batu, dan {} air".format(pasir,batu,air)
     return hasil
-    
+print(kumpul()) 
