@@ -21,7 +21,6 @@ totalCandi : string
 output : string
 """
 #Algoritma
-JumlahCandi = 99
 def ayamberkokok():
     suaraAyam = print("Kukuruyuk.. Kukuruyuk..")
     totalCandi = "Jumlah candi : " + str(JumlahCandi)  
@@ -32,7 +31,7 @@ def ayamberkokok():
 
     return totalCandi
 
-print(ayamberkokok())
+
 
 
     
