@@ -37,7 +37,7 @@ UserData        : User        = Data utama autentikasi login
 """
 
 # INISIALISASI
-UserInfo = [False, "Null", "Null", "Null"]
+UserInfo = [False, "", "", ""]
 Run = False
 
 # PARSER
@@ -52,15 +52,36 @@ if args.SaveGame:
     MainDirectory = 'src/SaveGame/'+args.SaveGame
 
     # LOADING GLOBAL DATA
-    UserData = F13.load(MainDirectory)
-    CandiData = F13.load(MainDirectory)
-    BahanBangunanData = F13.load(MainDirectory)
+
+    # PERHATIANN!!!
+    """
+    Bentuk data UserData, CandiData, dan BahanBangunan Data akan berbentuk sama persis seperti
+    tabel pada file csv dengan indeks baris pertama adalah header (header masuk dalam baris)
+    """
+
+
+    # Data Jumlah Baris dan Kolom
+    BarisUser = 103
+    KolomUser = 3
+    BarisCandi = 101
+    KolomCandi = 5
+    BarisBBangunan = 101
+    KolomBBangunan = 3
+
+    UserData = F13.load(MainDirectory+"/user.csv", BarisUser, KolomUser) # Matrix
+    CandiData = F13.load(MainDirectory+"/candi.csv", BarisCandi, KolomCandi) # Matrix
+    BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan) # Matrix
     Run = True
+
+    # DEBUG
+    #print(UserData)
+    #print(CandiData)
+    #print(BahanBangunanData)
 
     time.sleep(2)
     os.system('cls')
     print("Selamat datang di program “Manajerial Candi”\nSilahkan masukkan username Anda")
-    UserInfo = F01.login(UserInfo)
+    UserInfo = F01.login(UserInfo, UserData)
   else:
     print('Folder "'+args.SaveGame+'" tidak ditemukan.')
 else:
@@ -73,7 +94,7 @@ while Run:
   command = input()
 
   if command == "login":
-    UserInfo = F01.login(UserInfo)
+    UserInfo = F01.login(UserInfo,UserData)
   elif command == "logout":
     UserInfo = F02.logout(UserInfo)
   elif command == "summonjin":

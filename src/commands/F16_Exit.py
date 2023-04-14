@@ -22,7 +22,6 @@ Run : Boolean
 """
 #Algoritma
 
-import F14_Save as F14
 def exit():
     print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
     if (input() == "y" or input() == "Y"):
@@ -32,7 +31,7 @@ def exit():
         Run = False
     else :
         print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
-    
-print(exit())
+
+
 
 

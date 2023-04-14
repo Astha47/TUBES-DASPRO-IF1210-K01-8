@@ -33,25 +33,16 @@ def memintaAutentikasi():
 
 # Kamus Lokal
 # Algoritma
-def login(UserInfo):
+def login(UserInfo, UserData):
   if UserInfo[0] == False:
     
     #getAuthInfo
     auth = memintaAutentikasi()
     print()
-
-    #getUserData
-    AuthData = dapatkanInformasiUser(auth)
       
-    if AuthData[0]:
-      if AuthData[2] == auth[1]:
-        print("Selamat datang,", auth[0]+"!")
-      else:
-        print("Password salah!")
-    else:
-      print("Username tidak terdaftar")
+    
   else:
     print("Login gagal!")
     print("Anda telah login dengan username",UserInfo[1]+",",'silahkan lakukan "logout" sebelum melakukan login kembali.')
   
-  return AuthData
+  return 0
