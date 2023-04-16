@@ -18,7 +18,7 @@ def help(userInfo) :
         print ("Untuk masuk menggunakan akun")
         print("2. exit")
         print("Untuk keluar dari program dan kembali ke terminal")
-    elif userInfo[3] == "Bandung Bondowoso" :
+    elif userInfo[3] == "bandung_bondowoso" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
         print("2. summonjin")
@@ -37,7 +37,7 @@ def help(userInfo) :
         print("Untuk mengetahui progress pembangunan candi dari laporan")
         print("9. save")
         print("Untuk menyimpan data permainan")
-    elif userInfo[3] == "Roro Jonggrang" :
+    elif userInfo[3] == "roro_jonggrang" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
         print("2. hancurkancandi")
