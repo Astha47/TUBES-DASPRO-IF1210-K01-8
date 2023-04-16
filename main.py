@@ -79,9 +79,9 @@ if args.SaveGame:
 
 
     # DEBUG
-    print(UserData)
-    print(CandiData)
-    print(BahanBangunanData)
+    #print(UserData)
+    #print(CandiData)
+    #print(BahanBangunanData)
 
 
     print("Selamat datang di program “Manajerial Candi”\nSilahkan masukkan username Anda")

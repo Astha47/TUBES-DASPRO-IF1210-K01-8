@@ -18,7 +18,7 @@ UserActive : {  loginsession : Boolean
 # function dapatkanInformasiUser (auth : list of strings) -> AuthData : UserLog
 # {fungsi ini akan menerima informasi autentikasi dari user dan mencari data yang sesuai dengan username sama.
 #  Apabila ditemukan kecocokan username, makan fungsi akan mengembalikan kondisi bernilai True disusul username, password, dan role.
-#  namun bila username tidak ditemukan, fungsi akan mengembalikan kondisi bernilai False, disusul "-" untuk username, password, dan role.}
+#  namun bila username tidak ditemukan, fungsi akan mengembalikan kondisi bernilai False, disusul "" untuk username, password, dan role.}
 
 # REALISASI
 
