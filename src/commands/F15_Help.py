@@ -13,7 +13,7 @@ userInfo : array of string (username, password, role, loginSession)
 #ALGORITMA
 def help(userInfo) :
     print("=========== HELP ===========")
-    if userInfo[3] == "null" :
+    if userInfo[0] == False :
         print("1.login")
         print ("Untuk masuk menggunakan akun")
         print("2. exit")

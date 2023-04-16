@@ -23,7 +23,7 @@ import src.commands.F16_Exit                    as F16
 
 # DEFINISI DAN SPESIFIKASI VARIABEL GLOBAL
 """
-UserActive : {  loginsession : Boolean
+UserActive : {  loginsession : Boolean {Menentukan apakah ada akun yang melakukan login}
                 username     : String
                 password     : String
                 role         : String }
@@ -73,13 +73,17 @@ if args.SaveGame:
     BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan) # Matrix
     Run = True
 
-    # DEBUG
-    #print(UserData)
-    #print(CandiData)
-    #print(BahanBangunanData)
 
-    time.sleep(2)
+    time.sleep(1)
     os.system('cls')
+
+
+    # DEBUG
+    print(UserData)
+    print(CandiData)
+    print(BahanBangunanData)
+
+
     print("Selamat datang di program “Manajerial Candi”\nSilahkan masukkan username Anda")
     UserInfo = F01.login(UserInfo, UserData)
   else:
@@ -120,7 +124,7 @@ while Run:
   elif command == "save":
     F14.save()
   elif command == "help":
-    F15.help()
+    F15.help(UserInfo)
   elif command == "exit":
     F16.exit()
   else:
