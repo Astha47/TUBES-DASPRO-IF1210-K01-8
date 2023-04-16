@@ -35,14 +35,29 @@ def memintaAutentikasi():
 # Algoritma
 def login(UserInfo, UserData):
   if UserInfo[0] == False:
-    
+    OldUserInfo = UserInfo
     #getAuthInfo
     auth = memintaAutentikasi()
     print()
-      
+    
+    # Cari Username
+    for i in range(1,103):
+      if UserData[i][0] == auth[0]:
+        UserInfo[0] = True
+        UserInfo[1] = UserData[i][0]
+        UserInfo[2] = UserData[i][1]
+        UserInfo[3] = UserData[i][2]
+        break
+    
+    if UserInfo[0]:
+      print("Username tidak ditemukan.")
+      return OldUserInfo
+    else:
+      if auth[1] == UserInfo[2]:
+        print("login sukses")
+        return UserInfo
+    
     
   else:
     print("Login gagal!")
     print("Anda telah login dengan username",UserInfo[1]+",",'silahkan lakukan "logout" sebelum melakukan login kembali.')
-  
-  return 0
