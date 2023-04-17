@@ -21,7 +21,7 @@ totalCandi : string
 output : string
 """
 #Algoritma
-def ayamberkokok():
+def ayamberkokok(JumlahCandi):
     suaraAyam = print("Kukuruyuk.. Kukuruyuk..")
     totalCandi = "Jumlah candi : " + str(JumlahCandi)  
     if JumlahCandi < 100 :

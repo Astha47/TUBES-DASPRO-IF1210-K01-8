@@ -1,3 +1,5 @@
+import os
+
 def save ():
     a = input("Masukkan nama folder : ")
     if a in os.listdir():
