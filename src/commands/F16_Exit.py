@@ -24,14 +24,13 @@ Run : Boolean
 
 def exit():
     print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
+    while (input() != "y" or input() != "Y" or input() != "n" or input() != "N"):
+        print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
     if (input() == "y" or input() == "Y"):
         F14()
         Run = False
     elif (input() == "n" or input() == "N"):
         Run = False
-    else :
-        print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
-
 
 
 
