@@ -23,14 +23,17 @@ Run : Boolean
 #Algoritma
 
 def exit():
-    print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
-    if (input() == "y" or input() == "Y"):
-        F14()
+    masukan = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
+    if (masukan == "y" or masukan == "Y"):
+        save()
         Run = False
-    elif (input() == "n" or input() == "N"):
+        break
+    elif (masukan == "n" or masukan == "N"):
         Run = False
-    else :
+        break
+    while (masukan != "y" or masukan != "Y" or masukan != "n" or masukan != "N"):
         print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
+    return Run
 
 
 
