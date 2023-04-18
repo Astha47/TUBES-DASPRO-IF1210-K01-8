@@ -73,6 +73,8 @@ if args.SaveGame:
     BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan) # Matrix
     Run = True
 
+    print(UserData)
+
 
     time.sleep(1)
     os.system('cls')

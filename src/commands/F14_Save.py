@@ -1,6 +1,6 @@
 import os
 
-def save ():
+def save():
     a = input("Masukkan nama folder : ")
     if a in os.listdir():
         print("Berhasil menyimpan data di folder", a)
