@@ -51,4 +51,4 @@ def load(FileDirectory,baris,kolom):
 
     return Array
 
-#print(load("src/SaveGame/game01/user.csv",3,3))
+#print(load("src/SaveGame/game01/user.csv",4,3))

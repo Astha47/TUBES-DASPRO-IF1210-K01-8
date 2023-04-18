@@ -2,20 +2,30 @@ import os
 
 def ArrayKeRawString(Array,Kolom,Baris):
     RawString = ''
-    for i in range(Baris-1):
-        for j in range(Kolom-1):
-            RawString += Array[i][j]
-            RawString += ';'
-        RawString += Array[i][Kolom-1]
-        RawString += '\n'
-    for k in range(Kolom-1):
+    for i in range(Baris):
+        if Array[i][0] != '':
+            for j in range(Kolom-1):
+                RawString += Array[i][j]
+                RawString += ';'
+            RawString += Array[i][Kolom-1]
+            RawString += '\n'
+    
+    """
+        for k in range(Kolom-1):
             RawString += Array[Baris-1][k]
             RawString += ';'
-    RawString += Array[Baris-1][Kolom-1]
+        RawString += Array[Baris-1][Kolom-1]
+    """
+
+    #Potong karakter terakhir
+    FinalString = ''
+    for i in range(len(RawString)-1):
+        FinalString += RawString[i]
+
 
     #for debug purpose
     #RawString += '{This line must be the last line}'
-    return RawString
+    return FinalString
 
 #DEBUG
 #Array = [['asaad','asdasds','asdasds'],['asaad','asdasds','asdasds'],['asaad','asdasds','asdasds']]
@@ -27,7 +37,7 @@ def save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,Kol
     
     a = input("Masukkan nama folder : ")
     TargetLocation = parentLocation+'/'+a
-    if (TargetLocation in os.listdir()) == False:
+    if (os.path.isdir(TargetLocation)) == False:
         print("Membuat folder", a)
         # MEMBUAT SAVE SLOT GAME
         os.mkdir(TargetLocation)

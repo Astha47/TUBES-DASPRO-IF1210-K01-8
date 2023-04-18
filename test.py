@@ -1,2 +1,4 @@
-for i in range(1,103):
-    print(i)
+import os
+TargetLocation = 'src/SaveGame/debug'
+if (os.path.isdir(TargetLocation)):
+    print('True')
