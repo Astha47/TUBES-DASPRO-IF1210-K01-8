@@ -25,12 +25,10 @@ Run : Boolean
 def exit():
     masukan = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
     if (masukan == "y" or masukan == "Y"):
-        save()
+        #save()
         Run = False
-        break
     elif (masukan == "n" or masukan == "N"):
         Run = False
-        break
     while (masukan != "y" or masukan != "Y" or masukan != "n" or masukan != "N"):
         print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
     return Run

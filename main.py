@@ -61,7 +61,7 @@ if args.SaveGame:
 
 
     # Data Jumlah Baris dan Kolom
-    BarisUser = 103
+    BarisUser = 104
     KolomUser = 3
     BarisCandi = 101
     KolomCandi = 5
@@ -73,7 +73,17 @@ if args.SaveGame:
     BahanBangunanData = F13.load(MainDirectory+"/bahan_bangunan.csv", BarisBBangunan, KolomBBangunan) # Matrix
     Run = True
 
-    print(UserData)
+    # PERHATIAN
+    """
+    Seluruh data diatas berbentuk matriks dan untuk baris ke-0 untuk tiap data merupakan Header dari file CSV
+    Harap ini diperhatikan untuk setiap iterasi untuk menghindari fatal error
+    """
+
+    # DEBUG
+    #print('Userdata = ',UserData)
+    #print('CandiData = ', CandiData)
+    #print('BahanBangunanData = ',BahanBangunanData)
+    #debug = input()
 
 
     time.sleep(1)
@@ -124,7 +134,7 @@ while Run:
   elif command == "ayamberkokok":
     F12.ayamberkokok()
   elif command == "save":
-    F14.save()
+    F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
   elif command == "help":
     F15.help(UserInfo)
   elif command == "exit":

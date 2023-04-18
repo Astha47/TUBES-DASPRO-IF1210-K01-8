@@ -58,7 +58,7 @@ def login(UserInfo, UserData):
     else:
       if auth[1] == UserInfo[2]:
         print("login sukses")
-        print("Selamat datang "+UserInfo[0]+"!")
+        print("Selamat datang "+UserInfo[1]+"!")
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
         return UserInfo
     
