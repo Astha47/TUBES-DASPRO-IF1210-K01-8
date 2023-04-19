@@ -142,7 +142,7 @@ while Run:
   elif command == "help":
     F15.help(UserInfo)
   elif command == "exit":
-    Run = F16.exit()
+    Run = F16.exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
   else:
     print("Command yang anda masukkan salah!")
     print('gunakan "help" untuk menampilkan petunjuk')

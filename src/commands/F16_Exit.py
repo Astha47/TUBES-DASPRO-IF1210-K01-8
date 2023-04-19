@@ -21,11 +21,12 @@ UserActive : {  loginsession : Boolean
 Run : Boolean
 """
 #Algoritma
+import F14_Save as F14
 
-def exit():
+def exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan):
     masukan = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
     if (masukan == "y" or masukan == "Y"):
-        #save()
+        F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
         Run = False
     elif (masukan == "n" or masukan == "N"):
         Run = False
