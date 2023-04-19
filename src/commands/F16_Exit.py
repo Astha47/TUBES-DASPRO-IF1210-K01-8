@@ -29,8 +29,8 @@ def exit():
         Run = False
     elif (masukan == "n" or masukan == "N"):
         Run = False
-    while (masukan != "y" or masukan != "Y" or masukan != "n" or masukan != "N"):
-        print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
+    else:
+        Run = exit()
     return Run
 
 

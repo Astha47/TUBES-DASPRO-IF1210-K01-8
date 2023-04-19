@@ -34,6 +34,10 @@ User       : Array of  {  username     : String
 UserInfo        : UserActive  = Berfungsi sebagai variabel penentu useraccount yang login
 MainDirectory   : String      = Berfungsi sebagai penentu lokasi data yang digunakan
 UserData        : User        = Data utama autentikasi login
+
+UndoDump : {  DumpCandi       = Array data candi yang terhapus
+              DumpJin         = Array data jin yang terhapus
+              NilaiEffDCandi  = Nilai integer }
 """
 
 # INISIALISASI
@@ -138,7 +142,7 @@ while Run:
   elif command == "help":
     F15.help(UserInfo)
   elif command == "exit":
-    F16.exit()
+    Run = F16.exit()
   else:
     print("Command yang anda masukkan salah!")
     print('gunakan "help" untuk menampilkan petunjuk')
