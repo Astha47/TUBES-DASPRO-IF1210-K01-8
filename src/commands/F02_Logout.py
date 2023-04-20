@@ -1,5 +1,3 @@
-
-
 def logout(UserInfo):
     if UserInfo[0] == True:
         UserInfo = [False,'','','']

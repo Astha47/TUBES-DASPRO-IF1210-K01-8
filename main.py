@@ -43,6 +43,7 @@ UndoDump : {  DumpCandi       = Array data candi yang terhapus
 # INISIALISASI
 UserInfo = [False, "", "", ""]
 Run = False
+cacheIndex = 0
 
 # PARSER
 parser = argparse.ArgumentParser()
