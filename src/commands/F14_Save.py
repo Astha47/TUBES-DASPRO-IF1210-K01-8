@@ -35,7 +35,16 @@ def ArrayKeRawString(Array,Kolom,Baris):
 def save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan):
     parentLocation = 'src/SaveGame'
     
-    a = input("Masukkan nama folder : ")
+    validate = True
+    while validate:
+        a = input("Masukkan nama folder : ")
+        if a == '':
+            print("Nama folder tidak boleh kosong")
+        elif a == 'newgame':
+            print("Maaf folder tersebut terproteksi")
+        else:
+            validate = False
+
     TargetLocation = parentLocation+'/'+a
     if (os.path.isdir(TargetLocation)) == False:
         print("Membuat folder", a)
