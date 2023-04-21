@@ -8,7 +8,7 @@ def RNG(MAX):
     x = seed
     for i in range(10):
         x = (a * x + c) % m
-    time.sleep(0.13)
+    time.sleep(0.2)
     return x % (MAX +1)
 
 # DEBUG

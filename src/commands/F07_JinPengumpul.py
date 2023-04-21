@@ -18,7 +18,8 @@ material : {  pasir : integer
 
 #REALISASI
 
-import random
+#import random
+import src.commands.B01_RNG as RNG
 
 #function kumpul () -> hasil : string
 #Kamus Lokal
@@ -31,12 +32,15 @@ hasil : string
 def kumpul(BahanBangunanData):
 
     #Debug
-    print("Bahan bangunan awal : ", BahanBangunanData)
+    #print("Bahan bangunan awal : ", BahanBangunanData)
 
 
-    pasir = random.randint(0,5) 
-    batu = random.randint(0,5)
-    air = random.randint(0,5)
+    #pasir = random.randint(0,5) 
+    #batu = random.randint(0,5)
+    #air = random.randint(0,5)
+    pasir = RNG.RNG(5) 
+    batu = RNG.RNG(5)
+    air = RNG.RNG(5)
     material = [pasir,batu,air]
     print("Jin menemukan",pasir,"pasir,",batu,"batu, dan",air,"air.")
 
