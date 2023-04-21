@@ -9,10 +9,12 @@ def load(FileDirectory,baris,kolom):
 
     
     # Memisahkan per-line
-    jumlahBaris = 0 # Menghitung jumlah baris dalam file terlebih dahulu
+    jumlahBaris = 1 # Menghitung jumlah baris dalam file terlebih dahulu
     for i in range(len(RawString)):
         if RawString[i] == '\n':
             jumlahBaris += 1
+    
+    #print("Jumlah baris :", jumlahBaris)
 
     currentText = ""
     isiperline = [ 0 for i in range(jumlahBaris)]
@@ -24,6 +26,9 @@ def load(FileDirectory,baris,kolom):
             currentText = ""
         else:
             currentText += RawString[i]
+    isiperline[jumlahBaris-1] = currentText
+    
+    #print("Isi perline :", isiperline)
 
     # Memisahkan per kolom
     """
@@ -51,4 +56,4 @@ def load(FileDirectory,baris,kolom):
 
     return Array
 
-#print(load("src/SaveGame/game01/user.csv",4,3))
+#print(load("src/SaveGame/debug/bahan_bangunan.csv",4,3))

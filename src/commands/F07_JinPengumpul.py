@@ -28,10 +28,35 @@ material : array of integer
 hasil : string
 """
 #Algoritma
-def kumpul():
+def kumpul(BahanBangunanData):
+
+    #Debug
+    print("Bahan bangunan awal : ", BahanBangunanData)
+
+
     pasir = random.randint(0,5) 
     batu = random.randint(0,5)
     air = random.randint(0,5)
     material = [pasir,batu,air]
-    hasil = "Jin menemukan {} pasir, {} batu, dan {} air".format(pasir,batu,air)
-    return hasil
+    print("Jin menemukan",pasir,"pasir,",batu,"batu, dan",air,"air.")
+
+    # Hitung Total
+    PasirLama = int(BahanBangunanData[1][2])
+    BatuLama = int(BahanBangunanData[2][2])
+    AirLama = int(BahanBangunanData[3][2])
+
+    PasirTotal = pasir + PasirLama
+    BatuTotal = batu + BatuLama
+    AirTotal = air + AirLama
+
+    # Masukkan data
+    BahanBangunanData[1][2] = str(PasirTotal)
+    BahanBangunanData[2][2] = str(BatuTotal)
+    BahanBangunanData[3][2] = str(AirTotal)
+
+    return BahanBangunanData
+
+# Debug
+
+#Matriks = [["jenis", "deskripsi", "jumlah"],["pasir","asasfsdf","0"],["batu","asasfsdf","0"],["pasir","air","0"]]
+#NewMatriks = kumpul(Matriks)

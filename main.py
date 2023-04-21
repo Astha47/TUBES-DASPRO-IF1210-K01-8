@@ -20,21 +20,30 @@ import src.commands.F13_Load                    as F13
 import src.commands.F14_Save                    as F14
 import src.commands.F15_Help                    as F15
 import src.commands.F16_Exit                    as F16
-import src.toolkit.SaveCache                    as SaveCache
+#import src.toolkit.SaveCache                    as SaveCache
 
 # DEFINISI DAN SPESIFIKASI VARIABEL GLOBAL
 """
-UserActive : {  loginsession : Boolean {Menentukan apakah ada akun yang melakukan login}
-                username     : String
-                password     : String
-                role         : String }
-User       : Array of  {  username     : String
-                          password     : String
-                          role         : String }
+UserActive      : {  loginsession : Boolean {Menentukan apakah ada akun yang melakukan login}
+                     username     : String
+                     password     : String
+                     role         : String }
+User            : Array of  {  username     : String
+                               password     : String
+                               role         : String }
 
 UserInfo        : UserActive  = Berfungsi sebagai variabel penentu useraccount yang login
 MainDirectory   : String      = Berfungsi sebagai penentu lokasi data yang digunakan
 UserData        : User        = Data utama autentikasi login
+
+Type   Cache    : { CacheData = Berupa Array yang berisikan rekaman perubahan data UserInfo.
+                                Kolom terakhir pada array ini berisi indeks perubahan
+                    BarisEff  = Nilai baris efektif dari CacheData
+                    KolomEff  = Nilai kolom efektif dari CacheData
+
+UserDataCache           : Cache
+CandiDataCache          : Cache
+BahanBangunanDataCache  : Cache
 
 UndoDump : {  DumpCandi       = Array data candi yang terhapus
               DumpJin         = Array data jin yang terhapus
@@ -44,6 +53,9 @@ UndoDump : {  DumpCandi       = Array data candi yang terhapus
 # INISIALISASI
 UserInfo = [False, "", "", ""]
 Run = False
+UserDataCache = [[[]],0,3]
+CandiDataCache = [[[]],0,5]
+BahanBangunanDataCache = [[[]],0,3]
 cacheIndex = 0
 
 # PARSER
@@ -67,11 +79,11 @@ if args.SaveGame:
 
 
     # Data Jumlah Baris dan Kolom
-    BarisUser = 104
+    BarisUser = 103
     KolomUser = 3
-    BarisCandi = 101
+    BarisCandi = 10001
     KolomCandi = 5
-    BarisBBangunan = 101
+    BarisBBangunan = 4
     KolomBBangunan = 3
 
     UserData = F13.load(MainDirectory+"/user.csv", BarisUser, KolomUser) # Matrix
@@ -119,8 +131,8 @@ while Run:
     UserInfo = F01.login(UserInfo,UserData)
   elif command == "logout":
     UserInfo = F02.logout(UserInfo)
-  elif command == "summonjin":
-    F03.summonjin()
+  elif command == "summonjin" and UserInfo[3] == 'bandung_bondowoso':
+    UserData = F03.summonjin(UserData, BarisUser)
   elif command == "hapusjin":
     F04.hapusjin()
   elif command == "ubahjin":
@@ -128,7 +140,7 @@ while Run:
   elif command == "bangun":
     F06.bangun()
   elif command == "kumpul":
-    F07.kumpul()
+    BahanBangunanData = F07.kumpul(BahanBangunanData)
   elif command == "batchkumpul":
     F08.batchkumpul
   elif command == "laporanjin":
@@ -145,9 +157,15 @@ while Run:
     F15.help(UserInfo)
   elif command == "exit":
     Run = F16.exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
-  #DEBUG
-  elif command == "savecache":
-    cacheIndex = SaveCache.saveCache(UserData, CandiData, BahanBangunanData, BarisUser, KolomUser, BarisCandi, KolomCandi, BarisBBangunan, KolomBBangunan, cacheIndex, args.SaveGame)
+  #elif command == "undo":
+    #SaveCache.SaveCache()
+  elif command == "undostep":
+    print("yahahah belum jadi")
   else:
     print("Command yang anda masukkan salah!")
     print('gunakan "help" untuk menampilkan petunjuk')
+
+    #DEBUG
+    print(BahanBangunanData)
+    #print(UserData)
+    #print(CandiData)
