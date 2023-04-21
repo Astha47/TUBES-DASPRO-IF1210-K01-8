@@ -42,7 +42,7 @@ def save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,Kol
         # MEMBUAT SAVE SLOT GAME
         os.mkdir(TargetLocation)
         # MEMBUAT FOLDER CACHE
-        os.mkdir(TargetLocation+'/cache')
+        #os.mkdir(TargetLocation+'/cache')
     
     RAWTextUserData = ArrayKeRawString(UserData,KolomUser,BarisUser)
     RAWTextCandiData = ArrayKeRawString(CandiData,KolomCandi,BarisCandi)

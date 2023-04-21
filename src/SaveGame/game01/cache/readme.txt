@@ -1,1 +1,0 @@
-Folder ini digunakan sebagai dump sementara dari setiap aksi yang dilakukan agar dapat melakukan undo
