@@ -20,6 +20,7 @@ import src.commands.F13_Load                    as F13
 import src.commands.F14_Save                    as F14
 import src.commands.F15_Help                    as F15
 import src.commands.F16_Exit                    as F16
+import src.toolkit.SaveCache                    as SaveCache
 
 # DEFINISI DAN SPESIFIKASI VARIABEL GLOBAL
 """
@@ -144,6 +145,9 @@ while Run:
     F15.help(UserInfo)
   elif command == "exit":
     Run = F16.exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
+  #DEBUG
+  elif command == "savecache":
+    cacheIndex = SaveCache.saveCache(UserData, CandiData, BahanBangunanData, BarisUser, KolomUser, BarisCandi, KolomCandi, BarisBBangunan, KolomBBangunan, cacheIndex, args.SaveGame)
   else:
     print("Command yang anda masukkan salah!")
     print('gunakan "help" untuk menampilkan petunjuk')

@@ -32,17 +32,16 @@ def ArrayKeRawString(Array,Kolom,Baris):
 #print(ArrayKeRawString(Array,3,3))
 
 
-def save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan,cahceIndex):
+def saveCache(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan,cahceIndex,a):
     parentLocation = 'src/SaveGame'
-    
-    a = input("Masukkan nama folder : ")
+    #a = input("Masukkan nama folder : ")
     TargetLocation = parentLocation+'/'+a+'/'+str(cahceIndex)
     if (os.path.isdir(TargetLocation)) == False:
-        print("Membuat folder", a)
+        print("Menyimpan sesi", a)
         # MEMBUAT SAVE SLOT GAME
         os.mkdir(TargetLocation)
         # MEMBUAT FOLDER CACHE
-        os.mkdir(TargetLocation+'/cache')
+        #os.mkdir(TargetLocation+'/cache')
     
     RAWTextUserData = ArrayKeRawString(UserData,KolomUser,BarisUser)
     RAWTextCandiData = ArrayKeRawString(CandiData,KolomCandi,BarisCandi)
