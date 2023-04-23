@@ -134,7 +134,18 @@ while Run:
   elif command == "summonjin" and UserInfo[3] == 'bandung_bondowoso':
     UserData = F03.summonjin(UserData, BarisUser)
   elif command == "hapusjin":
-    F04.hapusjin()
+
+    # Aksi prosedural multivariable
+
+    aksi = F04.hapusjin(UserData, BarisUser)
+    if aksi[0]:
+      #Delete User Jin
+      UserData[aksi[1]] = ['','','']
+      #Delete Candi yang Dibangun Jin
+      for i in range(1,BarisCandi):
+        if CandiData[i][1] == aksi[2]:
+          CandiData[i] = ['','','','','']
+
   elif command == "ubahjin":
     F05.ubahjin()
   elif command == "bangun":
