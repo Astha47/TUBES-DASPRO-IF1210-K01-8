@@ -1,6 +1,3 @@
-#def login(UserInfo):
-#    return UserInfo
-
 # F01 - Login
 
 # SPESIFIKASI DAN DEFINISI
