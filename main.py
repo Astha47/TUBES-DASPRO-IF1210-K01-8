@@ -147,13 +147,15 @@ while Run:
           CandiData[i] = ['','','','','']
 
   elif command == "ubahjin":
-    F05.ubahjin()
+    UserData = F05.ubahjin(UserData, BarisUser)
   elif command == "bangun":
     F06.bangun()
   elif command == "kumpul":
     BahanBangunanData = F07.kumpul(BahanBangunanData)
   elif command == "batchkumpul":
     F08.batchkumpul
+  elif command == "batchbangun":
+    F08.batchbangun
   elif command == "laporanjin":
     F09.laporanjin()
   elif command == "laporancandi":
