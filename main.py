@@ -149,7 +149,11 @@ while Run:
   elif command == "ubahjin":
     UserData = F05.ubahjin(UserData, BarisUser)
   elif command == "bangun":
-    F06.bangun()
+
+    data = F06.bangun(CandiData, BahanBangunanData, BarisCandi, UserInfo[3])
+    CandiData = data[0]
+    BahanBangunanData = data[1]
+    
   elif command == "kumpul":
     BahanBangunanData = F07.kumpul(BahanBangunanData)
   elif command == "batchkumpul":

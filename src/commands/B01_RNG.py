@@ -23,11 +23,12 @@ def RNGnoNull(MAX):
 
     hasil = x % (MAX +1)
 
-    if hasil == 0:
-        hasil = RNGnoNull(MAX)
+    if hasil == 0 or hasil == False:
+        print("hasil yang di dapat :",hasil," maka melakukan rekursif")
+        return RNGnoNull(MAX)
     else:
         return hasil
 
 # DEBUG
-#for i in range(12):
-#    print(RNG(25))
+#for i in range(1000):
+   #print(RNGnoNull(5))
