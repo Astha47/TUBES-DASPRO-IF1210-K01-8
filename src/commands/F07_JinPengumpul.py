@@ -45,9 +45,18 @@ def kumpul(BahanBangunanData):
     print("Jin menemukan",pasir,"pasir,",batu,"batu, dan",air,"air.")
 
     # Masukkan data
-    BahanBangunanData[1][2] += pasir
-    BahanBangunanData[2][2] += batu
-    BahanBangunanData[3][2] += air
+    # Proses Data Awal
+    pasirAwal = int(BahanBangunanData[1][2])
+    batuAwal  = int(BahanBangunanData[2][2])
+    airAwal   = int(BahanBangunanData[3][2])
+
+    pasir += pasirAwal
+    batu  += batuAwal
+    air   += airAwal
+
+    BahanBangunanData[1][2] = str(pasir)
+    BahanBangunanData[2][2] = str(batu)
+    BahanBangunanData[3][2] = str(air)
 
     return BahanBangunanData
 

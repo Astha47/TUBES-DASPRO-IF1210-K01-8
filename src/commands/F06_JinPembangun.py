@@ -35,9 +35,9 @@ def bangun(CandiData, BahanBangunanData, BarisCandi, UserJin):
     butuhbatu  = RNG.RNGnoNull(5)
     butuhair   = RNG.RNGnoNull(5)
 
-    stokpasir = BahanBangunanData[1][2]
-    stokbatu  = BahanBangunanData[2][2]
-    stokair   = BahanBangunanData[3][2]
+    stokpasir = int(BahanBangunanData[1][2])
+    stokbatu  = int(BahanBangunanData[2][2])
+    stokair   = int(BahanBangunanData[3][2])
 
     if butuhpasir <= stokpasir and butuhbatu <= stokbatu and butuhair <= stokair:
         kosong = hitungKosong(CandiData, BarisCandi)
@@ -47,9 +47,9 @@ def bangun(CandiData, BahanBangunanData, BarisCandi, UserJin):
         sisaair   = stokair - butuhair
 
         # Masukkan ke matriks
-        BahanBangunanData[1][2] = sisapasir
-        BahanBangunanData[2][2] = sisabatu
-        BahanBangunanData[3][2] = sisaair   
+        BahanBangunanData[1][2] = str(sisapasir)
+        BahanBangunanData[2][2] = str(sisabatu)
+        BahanBangunanData[3][2] = str(sisaair)
 
         print("Candi berhasil dibangun.")
 

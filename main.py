@@ -165,7 +165,12 @@ while Run:
     BahanBangunanData = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
 
   elif command == "batchbangun":
-    F08.batchbangun
+
+    data = F08.batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData)
+    UserData            = data[0]
+    CandiData           = data[1]
+    BahanBangunanData   = data[2]
+    
   elif command == "laporanjin":
     F09.laporanjin()
   elif command == "laporancandi":
@@ -185,7 +190,7 @@ while Run:
   elif command == "exit":
 
     Run = F16.exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
-    
+
   #elif command == "undo":
     #SaveCache.SaveCache()
   elif command == "undostep":
