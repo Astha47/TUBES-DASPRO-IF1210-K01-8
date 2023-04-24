@@ -157,11 +157,13 @@ while Run:
     BahanBangunanData = data[1]
     
   elif command == "kumpul":
+
     BahanBangunanData = F07.kumpul(BahanBangunanData)
+
   elif command == "batchkumpul":
 
     BahanBangunanData = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
-    
+
   elif command == "batchbangun":
     F08.batchbangun
   elif command == "laporanjin":
@@ -173,11 +175,17 @@ while Run:
   elif command == "ayamberkokok":
     F12.ayamberkokok()
   elif command == "save":
+
     F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
+
   elif command == "help":
+
     F15.help(UserInfo)
+
   elif command == "exit":
+
     Run = F16.exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
+    
   #elif command == "undo":
     #SaveCache.SaveCache()
   elif command == "undostep":
