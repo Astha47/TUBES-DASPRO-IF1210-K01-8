@@ -170,7 +170,7 @@ while Run:
     UserData            = data[0]
     CandiData           = data[1]
     BahanBangunanData   = data[2]
-    
+
   elif command == "laporanjin":
     F09.laporanjin()
   elif command == "laporancandi":
@@ -200,6 +200,6 @@ while Run:
     print('gunakan "help" untuk menampilkan petunjuk')
 
     #DEBUG
-    print(BahanBangunanData)
+    #print(BahanBangunanData)
     #print(UserData)
     #print(CandiData)
