@@ -147,7 +147,9 @@ while Run:
           CandiData[i] = ['','','','','']
 
   elif command == "ubahjin":
+    
     UserData = F05.ubahjin(UserData, BarisUser)
+
   elif command == "bangun":
 
     data = F06.bangun(CandiData, BahanBangunanData, BarisCandi, UserInfo[3])
