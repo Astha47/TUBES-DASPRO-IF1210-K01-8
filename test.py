@@ -1,4 +1,5 @@
-import os
-TargetLocation = 'src/SaveGame/debug'
-if (os.path.isdir(TargetLocation)):
-    print('True')
+ggg = [1,1,1]
+
+ggg[2] += 1
+
+print(ggg)

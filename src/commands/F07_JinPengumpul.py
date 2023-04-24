@@ -41,22 +41,13 @@ def kumpul(BahanBangunanData):
     pasir = RNG.RNG(5) 
     batu = RNG.RNG(5)
     air = RNG.RNG(5)
-    material = [pasir,batu,air]
+    #material = [pasir,batu,air]
     print("Jin menemukan",pasir,"pasir,",batu,"batu, dan",air,"air.")
 
-    # Hitung Total
-    PasirLama = int(BahanBangunanData[1][2])
-    BatuLama = int(BahanBangunanData[2][2])
-    AirLama = int(BahanBangunanData[3][2])
-
-    PasirTotal = pasir + PasirLama
-    BatuTotal = batu + BatuLama
-    AirTotal = air + AirLama
-
     # Masukkan data
-    BahanBangunanData[1][2] = str(PasirTotal)
-    BahanBangunanData[2][2] = str(BatuTotal)
-    BahanBangunanData[3][2] = str(AirTotal)
+    BahanBangunanData[1][2] += pasir
+    BahanBangunanData[2][2] += batu
+    BahanBangunanData[3][2] += air
 
     return BahanBangunanData
 
