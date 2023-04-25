@@ -3,9 +3,9 @@
 # Mungkin di fungsi F06 bisa ditambah data di tiap jin tentang berapa banyak candi yang mereka bangun. supaya kalau candinya hancur kinerja jin ngga terperngaruh (Co. Baris 23)
 
 # KAMUS
-"
-TempAr : array of strings
-"
+
+# TempAr : array of strings
+
 # ALGORITMA
 
 def TotalJin(UserData, BarisUser):
