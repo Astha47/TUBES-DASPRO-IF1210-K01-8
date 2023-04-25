@@ -20,31 +20,31 @@ def TotalJin(UserData, BarisUser):
     print(f"Total Jin Pembangun: {TotalBangun}")
 
 def KinerjaJin(UserData, BarisUser):
-    Terajin = UserData[1][3]
-    Termalas = UserData[1][3]
+    Terajin = int(UserData[1][3])
+    Termalas = int(UserData[1][3])
     for i in range (1, BarisUser):
-        if UserData[i][3] > Terajin:
-            Terjain = Userdata[i][3]
+        if int(UserData[i][3]) > Terajin:
+            Terjain = int(Userdata[i][3])
     for j in range (1, BarisUser):
-        if UserData[j][3] < Termalas:
-            Termalas = UserData[j][3]
+        if int(UserData[j][3]) < Termalas:
+            Termalas = int(UserData[j][3])
     First = " "
     for i in range (1, BarisUser):
-        if UserData[i][3] == Terajin:
+        if int(UserData[i][3]) == Terajin:
             if First == " ":                # Mengambil nama terajin pertama.
-                First = UserData[i][0]
+                First = int(UserData[i][0])
             else:                           # Mengurutkan nama terajin berdasarkan alphabet (terendah).
-                if UserData[i][0] < First:
-                    First = UserData[i][0]
+                if int(UserData[i][0]) < First:
+                    First = int(UserData[i][0])
     JinTerajin = First
     First = " "
     for i in range (1, BarisUser):
-        if UserData[i][3] == Termalas:
+        if int(UserData[i][3]) == Termalas:
             if First == " ":                # Mengambil nama termalas pertama.
-                First = UserData[i][0]
+                First = int(UserData[i][0])
             else:                           # Mengurutkan nama termalas berdasarkan alphabet (tertinggi).
-                if UserData[i][0] > First:
-                    First = UserData[i][0]
+                if int(UserData[i][0]) > First:
+                    First = int(UserData[i][0])
     JinTermalas = First
     print("Jin Terajin: ", JinTerajin)
     print("Jin Termalas: ", JinTermalas)
