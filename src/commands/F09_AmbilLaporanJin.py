@@ -1,6 +1,6 @@
 # F09 - Ambil Laporan Jin
 # Fungsi menampilkan Total Jin, Total jin tiap tipenya, mencari dan menampilkan jin termalas dan terajin berdasarkan jumlah candi yang mereka buat, dan bahan material yang tersedia.
-
+# Mungkin di fungsi F06 bisa ditambah data di tiap jin tentang berapa banyak candi yang mereka bangun. supaya kalau candinya hancur kinerja jin ngga terperngaruh (Co. Baris 23)
 
 # KAMUS
 
