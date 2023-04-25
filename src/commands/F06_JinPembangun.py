@@ -18,7 +18,7 @@ def CariIDKosong(CandiData, BarisCandi):
                 IDFound = True
                 break
         if IDFound == False:
-            IDcandi = i
+            IDcandi = str(i)
             break
     return IDcandi
 
