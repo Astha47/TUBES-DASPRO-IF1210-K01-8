@@ -172,13 +172,21 @@ while Run:
     BahanBangunanData   = data[2]
 
   elif command == "laporanjin":
-    F09.laporanjin()
+
+    F09.ambillaporanjin(UserData, BarisUser, BahanBangunanData)
+
   elif command == "laporancandi":
-    F10.laporancandi()
+
+    F10.AmbilLaporanCandi(CandiData, BarisCandi)
+
   elif command == "hancurkancandi":
-    F11.hancurkancandi()
+
+    CandiData = F11.hancurkancandi(CandiData, BarisCandi)
+
   elif command == "ayamberkokok":
-    F12.ayamberkokok()
+
+    F12.ayamberkokok(CandiData, BarisCandi)
+    
   elif command == "save":
 
     F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)

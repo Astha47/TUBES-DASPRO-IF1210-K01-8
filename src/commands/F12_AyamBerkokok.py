@@ -21,7 +21,16 @@ totalCandi : string
 output : string
 """
 #Algoritma
-def ayamberkokok(JumlahCandi):
+def hitungjumlah(CandiData, BarisCandi):
+    jumlah = 0
+    for i in range(1, BarisCandi):
+        if CandiData[i][0] != '':
+            jumlah += 1
+    return jumlah
+
+
+def ayamberkokok(CandiData, BarisCandi):
+    JumlahCandi = hitungjumlah
     suaraAyam = print("Kukuruyuk.. Kukuruyuk..")
     totalCandi = "Jumlah candi : " + str(JumlahCandi)  
     if JumlahCandi < 100 :
