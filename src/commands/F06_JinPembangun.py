@@ -14,7 +14,7 @@ def CariIDKosong(CandiData, BarisCandi):
     for i in range (1,100):
         IDFound = False
         for j in range (1,BarisCandi):
-            if i == CandiData[j][0]:
+            if CandiData[j][0] == str(i):
                 IDFound = True
                 break
         if IDFound == False:
@@ -48,18 +48,20 @@ def bangun(CandiData, BahanBangunanData, BarisCandi, UserJin):
 
         isi = hitungIsi(CandiData, BarisCandi)
 
+        # Masukkan ke matriks
+        BahanBangunanData[1][2] = str(sisapasir)
+        BahanBangunanData[2][2] = str(sisabatu)
+        BahanBangunanData[3][2] = str(sisaair)
+
         if  isi < 100:
-            # Masukkan ke matriks
-            BahanBangunanData[1][2] = str(sisapasir)
-            BahanBangunanData[2][2] = str(sisabatu)
-            BahanBangunanData[3][2] = str(sisaair)
             IDcandi = CariIDKosong(CandiData, BarisCandi)
             index = CariBarisKosong(CandiData, BarisCandi)
-
             CandiData[index] = [str(IDcandi), UserJin, str(butuhpasir), str(butuhbatu), str(butuhair)]
+            isi = hitungIsi(CandiData, BarisCandi)
 
         print("Candi berhasil dibangun.")
         print("Sisa candi yang perlu dibangun: "+str(100-isi)+".")
+
 
     else:
         print("Bahan bangunan tidak mencukupi.")

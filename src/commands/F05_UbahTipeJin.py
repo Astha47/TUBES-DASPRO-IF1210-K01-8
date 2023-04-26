@@ -4,7 +4,7 @@ def cariUsernameJin(UserData, BarisUser, usernameJin):
     data = [False,0,'']
     for i in range(1,BarisUser):
         if UserData[i][0] == usernameJin:
-            data = [True,i,UserData[i]]
+            data = [True,i,UserData[i][2]]
             break
     return data
 
@@ -23,11 +23,12 @@ def ubahjin(UserData, BarisUser):
 
     # cari data
     # Debug Mencari Data
-    print('Mencari data jin')
+    #print('Mencari data jin')
     data = cariUsernameJin(UserData, BarisUser, usernameJin)
-    print('data :',data)
+    #print('data :',data[0])
 
-    if data[0]:
+    if data[0] == True:
+        #print('dikerjakan')
 
         roleAwal = data[2]
         if roleAwal == 'Pengumpul':
@@ -35,10 +36,11 @@ def ubahjin(UserData, BarisUser):
         else:
             roleAkhir = 'Pengumpul'
 
-        aksi = memintaAksi
+        aksi = memintaAksi(roleAwal,roleAkhir)
 
         if aksi == 'y' or aksi == 'Y':
             UserData[data[1]][2] = roleAkhir
+            print("Tipe jin berhasil diubah.")
     else:
         print()
         print("Tidak ada jin dengan username tersebut.")
