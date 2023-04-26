@@ -22,8 +22,6 @@ DaftarCandi = [Candi() for i in range (0, Nmax)]
 
 
 # ALGORITMA
-
-
 def Material(DaftarCandi, Nmax):
     Total_Pasir = 0
     Total_Batu = 0
@@ -73,6 +71,7 @@ def AmbilLaporanCandi(DaftarCandi, Nmax):
 
 # CONTOH APLIKASI
 
+"""
 DaftarCandi[0].id = 0
 DaftarCandi[0].pasir = 1
 DaftarCandi[0].batu = 2
@@ -90,3 +89,7 @@ DaftarCandi[2].air = 7
 
 
 AmbilLaporanCandi(DaftarCandi, 3)
+
+"""
+
+

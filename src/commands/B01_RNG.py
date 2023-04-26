@@ -24,7 +24,7 @@ def RNGnoNull(MAX):
     hasil = x % (MAX +1)
 
     if hasil == 0 or hasil == False:
-        print("hasil yang di dapat :",hasil," maka melakukan rekursif")
+        #print("hasil yang di dapat :",hasil," maka melakukan rekursif")
         return RNGnoNull(MAX)
     else:
         return hasil
