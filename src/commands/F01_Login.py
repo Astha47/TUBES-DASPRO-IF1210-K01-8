@@ -47,7 +47,7 @@ def login(UserInfo, UserData):
         break
 
       # DEBUG
-      #print(UserInfo)      
+      print(UserInfo)      
     
     if UserInfo[0] == False:
       print("Username tidak ditemukan.")
@@ -58,6 +58,9 @@ def login(UserInfo, UserData):
         print("Selamat datang "+UserInfo[1]+"!")
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
         return UserInfo
+      else:
+        print("Password salah.")
+        return OldUserInfo
     
     
   else:

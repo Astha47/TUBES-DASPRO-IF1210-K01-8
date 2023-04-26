@@ -4,7 +4,7 @@ def cariUsernameJin(UserData, BarisUser, usernameJin):
     data = [False,0,'']
     for i in range(1,BarisUser):
         if UserData[i][0] == usernameJin:
-            data = [True,i,UserData[2]]
+            data = [True,i,UserData[i]]
             break
     return data
 
@@ -22,7 +22,10 @@ def ubahjin(UserData, BarisUser):
     usernameJin = input("Masukkan username jin : ")
 
     # cari data
+    # Debug Mencari Data
+    print('Mencari data jin')
     data = cariUsernameJin(UserData, BarisUser, usernameJin)
+    print('data :',data)
 
     if data[0]:
 

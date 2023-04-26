@@ -145,6 +145,7 @@ while Run:
       for i in range(1,BarisCandi):
         if CandiData[i][1] == aksi[2]:
           CandiData[i] = ['','','','','']
+          print('Jin berhasil dihapus.')
 
   elif command == "ubahjin":
 

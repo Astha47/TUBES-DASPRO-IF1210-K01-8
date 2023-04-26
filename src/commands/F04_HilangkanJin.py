@@ -9,7 +9,7 @@ def findJin(UserData, usernameJin, BarisUser):
             index = i
             break
     Finder = [Found,index]
-    return 
+    return Finder
 
     
 def hapusjin(UserData, BarisUser):
@@ -19,7 +19,7 @@ def hapusjin(UserData, BarisUser):
     if Finder[0]:
         validateAksi = True
         while validateAksi:
-            aksi = input("Apakah anda yakin ingin menghapus jin dengan username",usernameJin,"(Y/N)? ")
+            aksi = input("Apakah anda yakin ingin menghapus jin dengan username "+str(usernameJin)+" (Y/N)? ")
             if aksi == "y" or aksi == "Y" or aksi == "n" or aksi == "N":
                 validateAksi = False
             else:
