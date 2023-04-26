@@ -25,7 +25,7 @@ def KinerjaJin(UserData, BarisUser):
     Termalas = int(UserData[1][3])
     for i in range (1, BarisUser):
         if int(UserData[i][3]) > Terajin:
-            Terjain = int(Userdata[i][3])
+            Terjain = int(UserData[i][3])
     for j in range (1, BarisUser):
         if int(UserData[j][3]) < Termalas:
             Termalas = int(UserData[j][3])
@@ -35,7 +35,7 @@ def KinerjaJin(UserData, BarisUser):
             if First == " ":                            # Mengambil nama terajin pertama.
                 First = UserData[i][0]
             else:                                       # Mengurutkan nama terajin berdasarkan alphabet (terendah).
-                 TempAr = [First, UserData[i][0]]
+                TempAr = [First, UserData[i][0]]
                 if TempAr[0] < TempAr[1]:
                     First = TempAr[0]
                 else:
