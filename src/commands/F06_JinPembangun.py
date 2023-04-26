@@ -2,12 +2,12 @@
 
 import src.commands.B01_RNG as RNG
 
-def hitungKosong(CandiData, BarisCandi):
-    kosong = 0
+def hitungIsi(CandiData, BarisCandi):
+    isi = 0
     for i in range (1,BarisCandi):
-        if CandiData[i][0] == '':
-            kosong += 1
-    return kosong
+        if CandiData[i][0] != '':
+            isi += 1
+    return isi
 
 def CariIDKosong(CandiData, BarisCandi):
     IDcandi = 0
@@ -40,26 +40,26 @@ def bangun(CandiData, BahanBangunanData, BarisCandi, UserJin):
     stokair   = int(BahanBangunanData[3][2])
 
     if butuhpasir <= stokpasir and butuhbatu <= stokbatu and butuhair <= stokair:
-        kosong = hitungKosong(CandiData, BarisCandi)
+        
 
         sisapasir = stokpasir - butuhpasir
         sisabatu  = stokbatu - butuhbatu
         sisaair   = stokair - butuhair
 
-        # Masukkan ke matriks
-        BahanBangunanData[1][2] = str(sisapasir)
-        BahanBangunanData[2][2] = str(sisabatu)
-        BahanBangunanData[3][2] = str(sisaair)
+        isi = hitungIsi(CandiData, BarisCandi)
 
-        print("Candi berhasil dibangun.")
-
-        if kosong > 0:
+        if  isi < 100:
+            # Masukkan ke matriks
+            BahanBangunanData[1][2] = str(sisapasir)
+            BahanBangunanData[2][2] = str(sisabatu)
+            BahanBangunanData[3][2] = str(sisaair)
             IDcandi = CariIDKosong(CandiData, BarisCandi)
             index = CariBarisKosong(CandiData, BarisCandi)
 
-            CandiData[index] = [IDcandi, UserJin, butuhpasir, butuhbatu, butuhair]
-        
-        print("Sisa candi yang perlu dibangun: "+str(kosong)+".")
+            CandiData[index] = [str(IDcandi), UserJin, str(butuhpasir), str(butuhbatu), str(butuhair)]
+
+        print("Candi berhasil dibangun.")
+        print("Sisa candi yang perlu dibangun: "+str(100-isi)+".")
 
     else:
         print("Bahan bangunan tidak mencukupi.")

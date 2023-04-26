@@ -151,19 +151,20 @@ while Run:
       for i in range(1,BarisCandi):
         if CandiData[i][1] == aksi[2]:
           CandiData[i] = ['','','','','']
-          print('Jin berhasil dihapus.')
 
   elif command == "ubahjin" and UserInfo[3] == 'bandung_bondowoso':
 
     UserData = F05.ubahjin(UserData, BarisUser)
 
-  elif command == "bangun":
+  elif command == "bangun" and UserInfo[3] == 'Pembangun':
 
     data = F06.bangun(CandiData, BahanBangunanData, BarisCandi, UserInfo[3])
     CandiData = data[0]
     BahanBangunanData = data[1]
+    #print("Candi :",CandiData)
+    #print("Bahan Bangunan :",BahanBangunanData)
     
-  elif command == "kumpul":
+  elif command == "kumpul" and UserInfo[3] == 'Pengumpul':
 
     BahanBangunanData = F07.kumpul(BahanBangunanData)
 
@@ -186,11 +187,11 @@ while Run:
 
     F10.AmbilLaporanCandi(CandiData, BarisCandi)
 
-  elif command == "hancurkancandi":
+  elif command == "hancurkancandi" and UserInfo[3] == 'roro_jonggrang':
 
     CandiData = F11.hancurkancandi(CandiData, BarisCandi)
 
-  elif command == "ayamberkokok":
+  elif command == "ayamberkokok" and UserInfo[3] == 'roro_jonggrang':
 
     F12.ayamberkokok(CandiData, BarisCandi)
     

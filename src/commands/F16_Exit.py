@@ -31,7 +31,7 @@ def exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,Kol
     elif (masukan == "n" or masukan == "N"):
         Run = False
     else:
-        Run = exit()
+        Run = exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
     return Run
 
 

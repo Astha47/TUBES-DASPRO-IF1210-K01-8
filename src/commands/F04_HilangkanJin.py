@@ -11,22 +11,25 @@ def findJin(UserData, usernameJin, BarisUser):
     Finder = [Found,index]
     return Finder
 
+def mintaAksi(usernameJin):
+    aksi = input("Apakah anda yakin ingin menghapus jin dengan username "+str(usernameJin)+" (Y/N)? ")
+    if aksi == "y" or aksi == "Y" or aksi == "n" or aksi == "N":
+        return aksi
+    else:
+        print("Input",aksi,"tidak valid.")
+        return mintaAksi(usernameJin)
+
     
 def hapusjin(UserData, BarisUser):
     usernameJin = input("Masukkan username jin : ")
     Finder = findJin(UserData, usernameJin, BarisUser)
 
     if Finder[0]:
-        validateAksi = True
-        while validateAksi:
-            aksi = input("Apakah anda yakin ingin menghapus jin dengan username "+str(usernameJin)+" (Y/N)? ")
-            if aksi == "y" or aksi == "Y" or aksi == "n" or aksi == "N":
-                validateAksi = False
-            else:
-                print("Input",aksi,"tidak valid.")
+        aksi = mintaAksi(usernameJin)
         
         if aksi == "y" or aksi == "Y":
             Index = Finder[1]
+            print("Jin berhasil dihapus.")
             return [True,Index,usernameJin]
         else:
            return [False,'','']

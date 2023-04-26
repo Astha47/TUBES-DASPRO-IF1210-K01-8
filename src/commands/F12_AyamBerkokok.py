@@ -30,8 +30,8 @@ def hitungjumlah(CandiData, BarisCandi):
 
 
 def ayamberkokok(CandiData, BarisCandi):
-    JumlahCandi = hitungjumlah
-    suaraAyam = print("Kukuruyuk.. Kukuruyuk..")
+    JumlahCandi = hitungjumlah(CandiData, BarisCandi)
+    print("Kukuruyuk.. Kukuruyuk..")
     totalCandi = "Jumlah candi : " + str(JumlahCandi)  
     if JumlahCandi < 100 :
         output = print("Selamat, Roro Jonggrang memenangkan permainan!\n \n*Bandung Bondowoso angry noise*\n \nRoro Jonggrang dikutuk menjadi candi." )

@@ -47,12 +47,12 @@ def help(userInfo) :
         print("Untuk menyelesaikan permainan dengan memalsukan pagi hari")
         print("4. save")
         print("Untuk menyimpan data permainan")
-    elif userInfo[3] == "Jin Pengumpul" :
+    elif userInfo[3] == "Pengumpul" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
         print("2. kumpul")
         print("Untuk mengumpulkan resource candi")
-    elif userInfo[3] == "Jin Pembangun" :
+    elif userInfo[3] == "Pembangun" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
         print("2. bangun")
