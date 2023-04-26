@@ -43,7 +43,7 @@ def KinerjaJin(UserData, BarisUser):
     JinTerajin = First
     First = " "
     for i in range (1, BarisUser):
-        if int(UserData[i][3]) == Termalas:
+        if int(UserData[i][2]) == Termalas:
             if First == " ":                            # Mengambil nama termalas pertama.
                 First = UserData[i][0]
             else:                                       # Mengurutkan nama termalas berdasarkan alphabet (tertinggi).
