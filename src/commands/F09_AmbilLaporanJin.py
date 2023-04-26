@@ -4,7 +4,6 @@
 
 # KAMUS
 
-# TempAr : array of strings
 
 # ALGORITMA
 
@@ -32,26 +31,20 @@ def KinerjaJin(UserData, BarisUser):
     First = " "
     for i in range (1, BarisUser):
         if int(UserData[i][3]) == Terajin:
-            if First == " ":                            # Mengambil nama terajin pertama.
-                First = UserData[i][0]
-            else:                                       # Mengurutkan nama terajin berdasarkan alphabet (terendah).
-                TempAr = [First, UserData[i][0]]
-                if TempAr[0] < TempAr[1]:
-                    First = TempAr[0]
-                else:
-                    First = TempAr[1]  
+            if First == " ":                # Mengambil nama terajin pertama.
+                First = int(UserData[i][0])
+            else:                           # Mengurutkan nama terajin berdasarkan alphabet (terendah).
+                if int(UserData[i][0]) < First:
+                    First = int(UserData[i][0])
     JinTerajin = First
     First = " "
     for i in range (1, BarisUser):
-        if int(UserData[i][2]) == Termalas:
-            if First == " ":                            # Mengambil nama termalas pertama.
-                First = UserData[i][0]
-            else:                                       # Mengurutkan nama termalas berdasarkan alphabet (tertinggi).
-                TempAr = [First, UserData[i][0]]
-                if TempAr[0] > TempAr[1]:
-                    First = TempAr[0]
-                else:
-                    First = TempAr[1]                         
+        if int(UserData[i][3]) == Termalas:
+            if First == " ":                # Mengambil nama termalas pertama.
+                First = int(UserData[i][0])
+            else:                           # Mengurutkan nama termalas berdasarkan alphabet (tertinggi).
+                if int(UserData[i][0]) > First:
+                    First = int(UserData[i][0])
     JinTermalas = First
     print("Jin Terajin: ", JinTerajin)
     print("Jin Termalas: ", JinTermalas)
