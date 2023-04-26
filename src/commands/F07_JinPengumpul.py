@@ -1,16 +1,9 @@
-#(butuh revisi)
 #def kumpul()
 #    return hasil
 
 #F02 - Kumpul
 
 #SPESIFIKASI DAN DEFINISI
-
-"""
-material : {  pasir : integer
-                batu  : integer
-                air   : integer }
-"""
 
 #function kumpul () -> hasil : string
 #{fungsi ini akan menghasilkan kumpulan material (pasir, batu, dan air) dengan nilai yang random antara 0-5
@@ -21,12 +14,10 @@ material : {  pasir : integer
 #import random
 import src.commands.B01_RNG as RNG
 
-#function kumpul () -> hasil : string
 #Kamus Lokal
 """
 pasir, batu, air : integer
-material : array of integer
-hasil : string
+
 """
 #Algoritma
 def kumpul(BahanBangunanData):
@@ -64,3 +55,25 @@ def kumpul(BahanBangunanData):
 
 #Matriks = [["jenis", "deskripsi", "jumlah"],["pasir","asasfsdf","0"],["batu","asasfsdf","0"],["pasir","air","0"]]
 #NewMatriks = kumpul(Matriks)
+
+
+#NOTAL (Bikin disini aja?)
+"""
+PROGRAM Kumpul
+{spesifikasi : mengumpulkan bahan bangunan (pasir, batu, dan air) dengan random antara 0-5)}
+{import fungsi B01_RNG as RNG}
+
+KAMUS 
+pasir, batu, air : integer
+pasirAwal, batuAwal, airAwal : integer
+
+{deklarasi fungsi}
+
+function kumpul(BahanBangunanData) -> BahanBangunanData
+
+
+
+
+
+
+"""

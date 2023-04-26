@@ -31,8 +31,20 @@ def ayamberkokok(JumlahCandi):
 
     return totalCandi
 
+#NOTAL
+"""
+PROGRAM AyamBerkokok
+{ Spesifikasi :  }
+
+KAMUS 
+
+ALGORITMA
 
 
+
+
+
+"""
 
 
     
