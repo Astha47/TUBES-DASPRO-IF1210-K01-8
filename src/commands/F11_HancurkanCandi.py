@@ -7,7 +7,7 @@ def idFinder(CandiData, BarisCandi, id):
     return data
 
 def getaction(id):
-    action = input('Apakah anda yakin ingin menghancurkan candi ID: '+id+' (Y/N)? ')
+    action = input('Apakah anda yakin ingin menghancurkan candi ID:',id,'(Y/N)? ')
 
     if action == 'y' or action == 'Y' or action == 'n' or action == 'N':
         return action

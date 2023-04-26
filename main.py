@@ -128,18 +128,12 @@ while Run:
   command = input()
 
   if command == "login":
-
     UserInfo = F01.login(UserInfo,UserData)
-
   elif command == "logout":
-
     UserInfo = F02.logout(UserInfo)
-
   elif command == "summonjin" and UserInfo[3] == 'bandung_bondowoso':
-
     UserData = F03.summonjin(UserData, BarisUser)
-
-  elif command == "hapusjin" and UserInfo[3] == 'bandung_bondowoso':
+  elif command == "hapusjin":
 
     # Aksi prosedural multivariable
 
@@ -152,50 +146,40 @@ while Run:
         if CandiData[i][1] == aksi[2]:
           CandiData[i] = ['','','','','']
 
-  elif command == "ubahjin" and UserInfo[3] == 'bandung_bondowoso':
+  elif command == "ubahjin":
 
     UserData = F05.ubahjin(UserData, BarisUser)
 
-  elif command == "bangun" and UserInfo[3] == 'Pembangun':
+  elif command == "bangun":
 
     data = F06.bangun(CandiData, BahanBangunanData, BarisCandi, UserInfo[3])
     CandiData = data[0]
     BahanBangunanData = data[1]
-    #print("Candi :",CandiData)
-    #print("Bahan Bangunan :",BahanBangunanData)
     
-  elif command == "kumpul" and UserInfo[3] == 'Pengumpul':
+  elif command == "kumpul":
 
     BahanBangunanData = F07.kumpul(BahanBangunanData)
 
-  elif command == "batchkumpul" and UserInfo[3] == 'bandung_bondowoso':
+  elif command == "batchkumpul":
 
     BahanBangunanData = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
 
-  elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
+  elif command == "batchbangun":
 
     data = F08.batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData)
     UserData            = data[0]
     CandiData           = data[1]
     BahanBangunanData   = data[2]
 
-  elif command == "laporanjin" and UserInfo[3] == 'bandung_bondowoso':
-
-    F09.ambillaporanjin(UserData, BarisUser, BahanBangunanData)
-
-  elif command == "laporancandi" and UserInfo[3] == 'bandung_bondowoso':
-
-    F10.AmbilLaporanCandi(CandiData, BarisCandi)
-
-  elif command == "hancurkancandi" and UserInfo[3] == 'roro_jonggrang':
-
-    CandiData = F11.hancurkancandi(CandiData, BarisCandi)
-
-  elif command == "ayamberkokok" and UserInfo[3] == 'roro_jonggrang':
-
-    F12.ayamberkokok(CandiData, BarisCandi)
-    
-  elif command == "save"and UserInfo[0] == True:
+  elif command == "laporanjin":
+    F09.laporanjin()
+  elif command == "laporancandi":
+    F10.laporancandi()
+  elif command == "hancurkancandi":
+    F11.hancurkancandi()
+  elif command == "ayamberkokok":
+    F12.ayamberkokok()
+  elif command == "save":
 
     F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
 

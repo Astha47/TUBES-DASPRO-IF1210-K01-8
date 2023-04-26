@@ -32,7 +32,7 @@ def memintaAutentikasi():
 # Algoritma
 def login(UserInfo, UserData):
   if UserInfo[0] == False:
-    OldUserInfo = [False, "", "", ""]
+    OldUserInfo = UserInfo
     #getAuthInfo
     auth = memintaAutentikasi()
     print()
@@ -58,9 +58,6 @@ def login(UserInfo, UserData):
         print("Selamat datang "+UserInfo[1]+"!")
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
         return UserInfo
-      else:
-        print("Password salah.")
-        return OldUserInfo
     
     
   else:

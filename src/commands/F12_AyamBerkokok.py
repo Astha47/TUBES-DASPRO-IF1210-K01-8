@@ -21,17 +21,8 @@ totalCandi : string
 output : string
 """
 #Algoritma
-def hitungjumlah(CandiData, BarisCandi):
-    jumlah = 0
-    for i in range(1, BarisCandi):
-        if CandiData[i][0] != '':
-            jumlah += 1
-    return jumlah
-
-
-def ayamberkokok(CandiData, BarisCandi):
-    JumlahCandi = hitungjumlah(CandiData, BarisCandi)
-    print("Kukuruyuk.. Kukuruyuk..")
+def ayamberkokok(JumlahCandi):
+    suaraAyam = print("Kukuruyuk.. Kukuruyuk..")
     totalCandi = "Jumlah candi : " + str(JumlahCandi)  
     if JumlahCandi < 100 :
         output = print("Selamat, Roro Jonggrang memenangkan permainan!\n \n*Bandung Bondowoso angry noise*\n \nRoro Jonggrang dikutuk menjadi candi." )
@@ -40,8 +31,20 @@ def ayamberkokok(CandiData, BarisCandi):
 
     return totalCandi
 
+#NOTAL
+"""
+PROGRAM AyamBerkokok
+{ Spesifikasi :  }
+
+KAMUS 
+
+ALGORITMA
 
 
+
+
+
+"""
 
 
     

@@ -17,13 +17,6 @@ def hitungKosong(CandiData, BarisCandi):
             jumlah += 1
     return jumlah
 
-def hitungCandi(CandiData, BarisCandi):
-    jumlah = 0
-    for i in range(1, BarisCandi):
-        if CandiData[i][0] != '':
-            jumlah += 1
-    return jumlah
-
 def batchkumpul(BahanBangunanData, UserData, BarisUser):
     Tipe = 'Pengumpul'
     jumlah = hitungJin(UserData, BarisUser, Tipe)
@@ -66,12 +59,6 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
     jumlah = hitungJin(UserData, BarisUser, Tipe)
 
     if jumlah>0:
-        """jumlahCandi = hitungCandi(CandiData)
-
-        if jumlah<=(100-jumlahCandi):
-            target = jumlah
-        elif jumlah>(100-jumlahCandi):
-            target = """
         
         matriksbangun = [[0,0,0,0,0] for i in range(jumlah)]
 
@@ -79,34 +66,29 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
         for i in range(jumlah):
             for j in range(1,101):
                 Found = False
-                for k in range(1,BarisCandi):
-                    if CandiData[k][0] == str(j):
+                for i in range(1,BarisCandi):
+                    if CandiData[i][0] == j:
                         Found = True
                         break
 
                 if Found == False:
-                    for l in range(jumlah):
-                        if matriksbangun[l][0] == str(j):
+                    for i in range(jumlah):
+                        if matriksbangun[i][0] == j:
                             Found = True
                             break
                 if Found == False:
-                    matriksbangun[i][0] = str(j)
+                    matriksbangun[i][0] = j
                     break
         
-        #Debug Matriks bangun pasca pengisian id candi
-        #print("pasca id candi :",matriksbangun)
-        
-        # isi username Jin
+        # isi ID Jin
         iterator = 0
         for i in range(1,BarisUser):
             if UserData[i][2] == Tipe:
-                matriksbangun[iterator][1] = UserData[i][0]
+                matriksbangun[iterator][1] == UserData[i][0]
                 iterator +=1
             if iterator == jumlah:
                 break
 
-        #Debug Matriks bangun pasca pengisian username candi
-        #print("pasca username jin :",matriksbangun)
                 
         
         pasir  = 0
@@ -122,14 +104,9 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
             airbaru = RNG.RNGnoNull(5)
             air += airbaru
 
-            matriksbangun[i][2] = str(pasirbaru)
-            matriksbangun[i][3] = str(batubaru)
-            matriksbangun[i][4] = str(airbaru)
-
-        #Debug Matriks bangun pasca pengisian bahan candi
-        #print("pasca bahan :",matriksbangun)
-
-        
+            matriksbangun[i][2] = pasirbaru
+            matriksbangun[i][3] = batubaru
+            matriksbangun[i][4] = airbaru
         
         # Dapatkan data bahan bangunan
         stokpasir = int(BahanBangunanData[1][2])
@@ -147,28 +124,21 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
 
 
             # Hitung jumlah slot kosong
-            jumlahCandi = hitungCandi(CandiData, BarisCandi)
-            if (100-jumlahCandi)>= jumlah:
+            jumlahKosong = hitungKosong(CandiData, BarisCandi)
+            if jumlah <= jumlahKosong:
                 for i in range(jumlah):
                     for j in range(1,BarisCandi):
                         if CandiData[j][0] == '':
                             CandiData[j] = matriksbangun[i]
                             break
                 print("Jin berhasil membangun total",jumlah,"candi.")
-                #print(CandiData[3])
             else:
-                target = 100-jumlahCandi
-                for i in range(target):
+                for i in range(jumlahKosong):
                     for j in range(1,BarisCandi):
                         if CandiData[j][0] == '':
                             CandiData[j] = matriksbangun[i]
                             break
-                print("Jin berhasil membangun total",target,"candi.")
-
-            # Hitung kekurangan Candi
-            jumlahCandi = hitungCandi(CandiData, BarisCandi)
-            kekurangan = 100-jumlahCandi
-            print("Sisa candi yang perlu dibangun: "+str(kekurangan)+".")
+                print("Jin berhasil membangun total",jumlahKosong,"candi.")
             
         else:
             # hitung kekurangan

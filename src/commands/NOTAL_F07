@@ -1,0 +1,20 @@
+#NOTAL (Bikin disini aja?)
+"""
+PROGRAM Kumpul
+{spesifikasi : mengumpulkan bahan bangunan (pasir, batu, dan air) dengan random antara 0-5)}
+{import fungsi B01_RNG as RNG}
+
+KAMUS 
+pasir, batu, air : integer
+pasirAwal, batuAwal, airAwal : integer
+
+{deklarasi fungsi}
+
+function kumpul(BahanBangunanData) -> BahanBangunanData
+
+
+
+
+
+
+"""
