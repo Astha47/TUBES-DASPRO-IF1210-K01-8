@@ -128,12 +128,18 @@ while Run:
   command = input()
 
   if command == "login":
+
     UserInfo = F01.login(UserInfo,UserData)
+
   elif command == "logout":
+
     UserInfo = F02.logout(UserInfo)
+
   elif command == "summonjin" and UserInfo[3] == 'bandung_bondowoso':
+
     UserData = F03.summonjin(UserData, BarisUser)
-  elif command == "hapusjin":
+
+  elif command == "hapusjin" and UserInfo[3] == 'bandung_bondowoso':
 
     # Aksi prosedural multivariable
 
@@ -147,7 +153,7 @@ while Run:
           CandiData[i] = ['','','','','']
           print('Jin berhasil dihapus.')
 
-  elif command == "ubahjin":
+  elif command == "ubahjin" and UserInfo[3] == 'bandung_bondowoso':
 
     UserData = F05.ubahjin(UserData, BarisUser)
 
@@ -161,22 +167,22 @@ while Run:
 
     BahanBangunanData = F07.kumpul(BahanBangunanData)
 
-  elif command == "batchkumpul":
+  elif command == "batchkumpul" and UserInfo[3] == 'bandung_bondowoso':
 
     BahanBangunanData = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
 
-  elif command == "batchbangun":
+  elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
 
     data = F08.batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData)
     UserData            = data[0]
     CandiData           = data[1]
     BahanBangunanData   = data[2]
 
-  elif command == "laporanjin":
+  elif command == "laporanjin" and UserInfo[3] == 'bandung_bondowoso':
 
     F09.ambillaporanjin(UserData, BarisUser, BahanBangunanData)
 
-  elif command == "laporancandi":
+  elif command == "laporancandi" and UserInfo[3] == 'bandung_bondowoso':
 
     F10.AmbilLaporanCandi(CandiData, BarisCandi)
 
@@ -188,7 +194,7 @@ while Run:
 
     F12.ayamberkokok(CandiData, BarisCandi)
     
-  elif command == "save":
+  elif command == "save"and UserInfo[0] == True:
 
     F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
 

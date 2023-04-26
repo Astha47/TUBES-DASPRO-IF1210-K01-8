@@ -32,7 +32,7 @@ def memintaAutentikasi():
 # Algoritma
 def login(UserInfo, UserData):
   if UserInfo[0] == False:
-    OldUserInfo = UserInfo
+    OldUserInfo = [False, "", "", ""]
     #getAuthInfo
     auth = memintaAutentikasi()
     print()
@@ -47,7 +47,7 @@ def login(UserInfo, UserData):
         break
 
       # DEBUG
-      print(UserInfo)      
+      #print(UserInfo)      
     
     if UserInfo[0] == False:
       print("Username tidak ditemukan.")
