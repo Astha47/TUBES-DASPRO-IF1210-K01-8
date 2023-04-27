@@ -60,6 +60,6 @@ def KinerjaJin(UserData, BarisUser):
 def ambillaporanjin(UserData, BarisUser, BahanBangunanData):
     TotalJin(UserData, BarisUser)
     KinerjaJin(UserData, BarisUser)
-    print("Jumlah Pasir:", BahanBangunanData[1][2])
-    print("Jumlah Air: ", BahanBangunanData[2][2])
-    print("Jumlah Batu: ", BahanBangunanData[3][2])
+    print("Jumlah Pasir:", int(BahanBangunanData[1][2]))
+    print("Jumlah Air: ", int(BahanBangunanData[2][2]))
+    print("Jumlah Batu: ", int(BahanBangunanData[3][2]))
