@@ -1,1 +1,0 @@
-Folder commands berisi serangkaian fungsi utama dalam menjalankan permaianan

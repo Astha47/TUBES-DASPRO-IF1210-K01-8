@@ -1,1 +1,0 @@
-Folder test berisi serangkaian file yang digunakan sebagai media pengujian software
