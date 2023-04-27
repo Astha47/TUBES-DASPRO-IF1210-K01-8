@@ -22,74 +22,74 @@ DaftarCandi = [Candi() for i in range (0, Nmax)]
 
 
 # ALGORITMA
-def Material(DaftarCandi, Nmax):
+def hitungIsi(CandiData, BarisCandi):   # Fungsi dari F06
+    isi = 0
+    for i in range (1,BarisCandi):
+        if CandiData[i][0] != '':
+            isi += 1
+    return isi
+
+def Material(CandiData, BarisCandi):
     Total_Pasir = 0
     Total_Batu = 0
     Total_Air = 0
-    for i in range (Nmax):
-        Total_Pasir = Total_Pasir + DaftarCandi[i].pasir
-        Total_Batu = Total_Batu + DaftarCandi[i].batu
-        Total_Air = Total_Air + DaftarCandi[i].air
+    for i in range (BarisCandi):
+        Total_Pasir += int(CandiData[i][2])
+        Total_Batu  += int(CandiData[i][3])
+        Total_Air   += int(CandiData[i][4])
     print("Total_Pasir :" , Total_Pasir)
     print("Total_Batu :" , Total_Batu)
     print("Total_Air :" , Total_Air)
 
 
-def TotalCandi(DaftarCandi):
-    Total_Candi = 0
-    for i in range (Nmax):
-        if DaftarCandi[i].pasir > 0 or Candi[i].batu > 0 or DaftarCandi[i].air > 0:
-            Total_Candi = Total_Candi + 1
-    return(Total_Candi)
+def HargaCandi(CandiData, i):
+    return(10000*int(CandiData[i][2]) + 15000*int(CandiData[i][3]) + 7500*int(CandiData[i][4]))
 
 
-def HargaCandi(DaftarCandi):
-    return(10000*DaftarCandi.pasir + 15000*DaftarCandi.batu + 7500*DaftarCandi.air)
-
-
-def CandiTermahal(DaftarCandi, Nmax):
-    Candi_Termahal = DaftarCandi[0]
-    for i in range (1, Nmax):
-        if HargaCandi(Candi_Termahal) < HargaCandi(DaftarCandi[i]):
-            Candi_Termahal = DaftarCandi[i]
-    return(Candi_Termahal.id)
+def CandiTermahal(CandiData, BarisCandi):
+    Candi_Termahal = HargaCandi(CandiData, 1)
+    id_termahal = 1
+    for i in range (1, BarisCandi):
+        if Candi_Termahal < HargaCandi(CandiData, i):
+            Candi_Termahal = HargaCandi(CandiData, i)
+            id_termahal = i
+    print("ID Candi Termahal:", id_termahal, f"(Rp {Candi_Termahal})")
     
 
-def CandiTermurah(DaftarCandi, Nmax):
-    Candi_Termurah = DaftarCandi[0]
-    for i in range (1, Nmax):
-        if HargaCandi(Candi_Termurah) > HargaCandi(DaftarCandi[i]):
-            Candi_Termurah = DaftarCandi[i]
-    return(Candi_Termurah.id)
+def CandiTermurah(CandiData, BarisCandi):
+    Candi_Termurah = HargaCandi(CandiData, 1)
+    id_termurah = 1
+    for i in range (1, BarisCandi):
+        if Candi_Termurah > HargaCandi(CandiData, i):
+            Candi_Termurah = HargaCandi(CandiData, i)
+            id_termurah = i
+    print("ID Candi Termurah:", id_termurah, f"(Rp {Candi_Termurah})")
 
 
-def AmbilLaporanCandi(DaftarCandi, Nmax):
-    print("Total Candi:", TotalCandi(DaftarCandi))
-    Material(DaftarCandi, Nmax)
-    print("ID Candi Termahal:", CandiTermahal(DaftarCandi, Nmax), f"(Rp {HargaCandi(DaftarCandi[CandiTermahal(DaftarCandi, Nmax)])})")
-    print("ID Candi Termurah:", CandiTermurah(DaftarCandi, Nmax), f"(Rp {HargaCandi(DaftarCandi[CandiTermurah(DaftarCandi, Nmax)])})")
+def AmbilLaporanCandi(CandiData, BarisCandi):
+    print("Total Candi:", hitungIsi(CandiData, BarisCandi))
+    Material(CandiData, BarisCandi)
+    CandiTermahal(CandiData, BarisCandi)
+    CandiTermurah(CandiData, BarisCandi)
+    
 
 # CONTOH APLIKASI
 
-"""
-DaftarCandi[0].id = 0
-DaftarCandi[0].pasir = 1
-DaftarCandi[0].batu = 2
-DaftarCandi[0].air = 3
+BarisCandi = 4
+CandiData = [[f"{0}" for i in range(5)] for i in range (BarisCandi)]
 
-DaftarCandi[1].id = 1
-DaftarCandi[1].pasir = 2
-DaftarCandi[1].batu = 3
-DaftarCandi[1].air = 4
+CandiData[1][2] = "3"
+CandiData[1][3] = "2"
+CandiData[1][4] = "5"
 
-DaftarCandi[2].id = 2
-DaftarCandi[2].pasir = 5
-DaftarCandi[2].batu = 6
-DaftarCandi[2].air = 7
+CandiData[2][2] = "4"
+CandiData[2][3] = "3"
+CandiData[2][4] = "2"
 
+CandiData[3][2] = "4"
+CandiData[3][3] = "7"
+CandiData[3][4] = "9"
 
-AmbilLaporanCandi(DaftarCandi, 3)
+print(CandiData)
 
-"""
-
-
+AmbilLaporanCandi(CandiData, BarisCandi)
