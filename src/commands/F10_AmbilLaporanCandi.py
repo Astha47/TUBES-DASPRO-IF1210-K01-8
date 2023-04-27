@@ -9,43 +9,36 @@
 
 # KAMUS
 
-
-class Candi :
-    id : int
-    pasir : int
-    batu : int
-    air : int
-
-Nmax = 3
-
-DaftarCandi = [Candi() for i in range (0, Nmax)]
-
-
 # ALGORITMA
-def hitungIsi(CandiData, BarisCandi):   # Fungsi dari F06
+def hitungIsi(CandiData, BarisCandi):  # Fungsi F06
     isi = 0
     for i in range (1,BarisCandi):
         if CandiData[i][0] != '':
             isi += 1
     return isi
 
+# Menghitung Material dari CandiData
 def Material(CandiData, BarisCandi):
     Total_Pasir = 0
     Total_Batu = 0
     Total_Air = 0
     for i in range (BarisCandi):
-        Total_Pasir += int(CandiData[i][2])
-        Total_Batu  += int(CandiData[i][3])
-        Total_Air   += int(CandiData[i][4])
+        if (CandiData[i][2]) != '':
+            Total_Pasir += int(CandiData[i][2])
+            Total_Batu  += int(CandiData[i][3])
+            Total_Air   += int(CandiData[i][4])
     print("Total_Pasir :" , Total_Pasir)
     print("Total_Batu :" , Total_Batu)
     print("Total_Air :" , Total_Air)
 
-
+# Menghitung Harga Candi 
 def HargaCandi(CandiData, i):
-    return(10000*int(CandiData[i][2]) + 15000*int(CandiData[i][3]) + 7500*int(CandiData[i][4]))
+    if CandiData[i][2] != '':
+        return(10000*int(CandiData[i][2]) + 15000*int(CandiData[i][3]) + 7500*int(CandiData[i][4]))
+    else:
+        return(0)
 
-
+# Menentukan Candi Termahal
 def CandiTermahal(CandiData, BarisCandi):
     Candi_Termahal = HargaCandi(CandiData, 1)
     id_termahal = 1
@@ -53,17 +46,24 @@ def CandiTermahal(CandiData, BarisCandi):
         if Candi_Termahal < HargaCandi(CandiData, i):
             Candi_Termahal = HargaCandi(CandiData, i)
             id_termahal = i
-    print("ID Candi Termahal:", id_termahal, f"(Rp {Candi_Termahal})")
+    if hitungIsi(CandiData, BarisCandi) > 0:
+        print("ID Candi Termahal:", id_termahal, f"(Rp {Candi_Termahal})")
+    else:
+        print("ID Candi Termahal: -")
     
-
+# Menentukan Candi Termurah yang bukan 0
 def CandiTermurah(CandiData, BarisCandi):
     Candi_Termurah = HargaCandi(CandiData, 1)
     id_termurah = 1
     for i in range (1, BarisCandi):
-        if Candi_Termurah > HargaCandi(CandiData, i):
-            Candi_Termurah = HargaCandi(CandiData, i)
-            id_termurah = i
-    print("ID Candi Termurah:", id_termurah, f"(Rp {Candi_Termurah})")
+        if HargaCandi(CandiData, i) > 0:
+            if Candi_Termurah > HargaCandi(CandiData, i):
+                Candi_Termurah = HargaCandi(CandiData, i)
+                id_termurah = i
+    if hitungIsi(CandiData, BarisCandi) > 0:
+        print("ID Candi Termurah:", id_termurah, f"(Rp {Candi_Termurah})")
+    else:
+        print("ID Candi Termurah: -")
 
 
 def AmbilLaporanCandi(CandiData, BarisCandi):
@@ -73,23 +73,26 @@ def AmbilLaporanCandi(CandiData, BarisCandi):
     CandiTermurah(CandiData, BarisCandi)
     
 
-# CONTOH APLIKASI
+# CONTOH APLIKASI (sementara)
 
-BarisCandi = 4
-CandiData = [[f"{0}" for i in range(5)] for i in range (BarisCandi)]
+BarisCandi = 101
+CandiData = [['' for i in range(5)] for i in range (BarisCandi)]
 
+# misal sudah terisi
+CandiData[1][0] = "1"
 CandiData[1][2] = "3"
 CandiData[1][3] = "2"
 CandiData[1][4] = "5"
 
+CandiData[2][0] = "2"
 CandiData[2][2] = "4"
 CandiData[2][3] = "3"
 CandiData[2][4] = "2"
 
+CandiData[3][0] = "3"
 CandiData[3][2] = "4"
 CandiData[3][3] = "7"
 CandiData[3][4] = "9"
 
-print(CandiData)
 
 AmbilLaporanCandi(CandiData, BarisCandi)
