@@ -1,4 +1,4 @@
-# [BELUM SELESAI]
+"""# [BELUM SELESAI]
 # - Ada beberapa fungsi yang harus disesuaikan dengan F06 - Jin Pembangun #OK asumsi aja dulu ~ Fathur
 # - Masih belum tau Nmax dihitung pakai apa #Jumlah baris pada candi.csv yang sudah diimport ke matriks CandiData yang ada di main berjumlah pasti 101 baris, atau supaya aman gunakan variabel BarisCandi yang tersedia di main.py ~ Fathur
 # - Belum ditambah validasi akun Bondowoso (Menyusul) #Itu tinggal diubah di main.py, aman ~ Fathur
@@ -96,3 +96,5 @@ CandiData[3][4] = "9"
 
 
 AmbilLaporanCandi(CandiData, BarisCandi)
+"""
+
