@@ -101,13 +101,13 @@ def KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser):
             jumlahTopJin += 1
     
     # Buat arraynya
-    TopJin = ['username' for i in range(jumlahTopJin)]
+    TopJin = [0 for i in range(jumlahTopJin)]
 
     # Pengisian TopJin
     iterator = 0
     for i in range(jumlah):
         if Pembangun[i][1] == rekorcandi:
-            TopJin[iterator][0] = Pembangun[i][0]
+            TopJin[iterator] = Pembangun[i][0]
             iterator += 1
     
     # Sorting
@@ -131,15 +131,17 @@ def KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser):
     iterator = 0
     for i in range(jumlah):
         if Pembangun[i][1] == rekorcanditerendah:
-            LowJin[iterator][0] = Pembangun[i][0]
+            LowJin[iterator] = Pembangun[i][0]
             iterator += 1
     
     # Sorting
     LowJin = sortingLeksiografis(LowJin,jumlahLowJin)
 
-    
+    null = False
+    if TopJin[0] == LowJin[0]:
+        null = True
 
-    if jumlahTopJin>0 or TopJin[0] == LowJin[0]:
+    if jumlahTopJin>0 and null == False:
         print('Jin Terajin:',TopJin[0])
         print('Jin Termalas:',LowJin[0])
     else:
