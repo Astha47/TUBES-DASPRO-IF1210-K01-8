@@ -1,3 +1,13 @@
+"""
+Total Candi: 3
+Total_Pasir : 11
+Total_Batu : 12
+Total_Air : 16
+ID Candi Termahal: 3 (Rp 212500)
+ID Candi Termurah: 1 (Rp 97500)
+"""
+
+#"""
 # [BELUM SELESAI]
 # - Ada beberapa fungsi yang harus disesuaikan dengan F06 - Jin Pembangun #OK asumsi aja dulu ~ Fathur
 # - Masih belum tau Nmax dihitung pakai apa #Jumlah baris pada candi.csv yang sudah diimport ke matriks CandiData yang ada di main berjumlah pasti 101 baris, atau supaya aman gunakan variabel BarisCandi yang tersedia di main.py ~ Fathur
@@ -22,8 +32,8 @@ def Material(CandiData, BarisCandi):
     Total_Pasir = 0
     Total_Batu = 0
     Total_Air = 0
-    for i in range (BarisCandi):
-        if (CandiData[i][2]) != '':
+    for i in range (1,BarisCandi):
+        if (CandiData[i][0]) != '':
             Total_Pasir += int(CandiData[i][2])
             Total_Batu  += int(CandiData[i][3])
             Total_Air   += int(CandiData[i][4])
@@ -72,7 +82,7 @@ def AmbilLaporanCandi(CandiData, BarisCandi):
     CandiTermahal(CandiData, BarisCandi)
     CandiTermurah(CandiData, BarisCandi)
     
-
+"""
 # CONTOH APLIKASI (sementara)
 
 BarisCandi = 101
@@ -96,3 +106,4 @@ CandiData[3][4] = "9"
 
 
 AmbilLaporanCandi(CandiData, BarisCandi)
+"""

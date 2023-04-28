@@ -50,7 +50,7 @@ def help(userInfo) :
         print("4. save")
         print("Untuk menyimpan data permainan")
         print("5. exit")
-        print("Untuk keluar dari program dan kembali ke terminal")
+        print("Untuk keluar dari program dan kembali ke terminal") 
     elif userInfo[3] == "Pengumpul" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
