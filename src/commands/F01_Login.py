@@ -53,7 +53,7 @@ def login(UserInfo, UserData):
       print("Username tidak ditemukan.")
       return OldUserInfo
     else:
-      if auth[1] == UserInfo[2]:
+      if auth[1] == UserInfo[2] and auth[0] and auth[1]:
         print("login sukses")
         print("Selamat datang "+UserInfo[1]+"!")
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
