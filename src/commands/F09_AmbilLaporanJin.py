@@ -58,6 +58,13 @@ def KinerjaJin(UserData, BarisUser):
     print("Jin Terajin: ", JinTerajin)
     print("Jin Termalas: ", JinTermalas)
 """
+def sortingLeksiografis(array,panjang):
+    for i in range(panjang):
+        for j in range(i+1, panjang):
+            if array[i] > array[j]:
+                # Tukar posisi elemen jika elemen pada indeks i > elemen pada indeks j
+                array[i], array[j] = array[j], array[i]
+    return array
 
 def KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser):
     
@@ -86,9 +93,58 @@ def KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser):
         if Pembangun[i][1] >= rekorcandi:
             rekorcandi = Pembangun[i][1]
 
-    # Hitung jumlah jin teratas
+    # Analisa jin teratas
     # sudah pasti lebih dari nol apabila data data tidak kosong
+    jumlahTopJin = 0
+    for i in range(jumlah):
+        if Pembangun[i][1] == rekorcandi:
+            jumlahTopJin += 1
+    
+    # Buat arraynya
+    TopJin = ['username' for i in range(jumlahTopJin)]
 
+    # Pengisian TopJin
+    iterator = 0
+    for i in range(jumlah):
+        if Pembangun[i][1] == rekorcandi:
+            TopJin[iterator][0] = Pembangun[i][0]
+            iterator += 1
+    
+    # Sorting
+    TopJin = sortingLeksiografis(TopJin,jumlahTopJin)
+
+    # Analisa jin terbawah
+    rekorcanditerendah = rekorcandi
+    for i in range(jumlah):
+        if Pembangun[i][1] <= rekorcanditerendah:
+            rekorcanditerendah = Pembangun[i][1]
+    
+    jumlahLowJin = 0
+    for i in range(jumlah):
+        if Pembangun[i][1] == rekorcandi:
+            jumlahLowJin += 1
+    
+    # Buat arraynya
+    LowJin = ['username' for i in range(jumlahLowJin)]
+
+    # Pengisian TopJin
+    iterator = 0
+    for i in range(jumlah):
+        if Pembangun[i][1] == rekorcanditerendah:
+            LowJin[iterator][0] = Pembangun[i][0]
+            iterator += 1
+    
+    # Sorting
+    LowJin = sortingLeksiografis(LowJin,jumlahLowJin)
+
+    
+
+    if jumlahTopJin>0 or TopJin[0] == LowJin[0]:
+        print('Jin Terajin:',TopJin[0])
+        print('Jin Termalas:',LowJin[0])
+    else:
+        print('Jin Terajin: -')
+        print('Jin Termalas: -')
     
     return
     
@@ -96,7 +152,7 @@ def KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser):
 def ambillaporanjin(UserData, BarisUser, BahanBangunanData, CandiData, BarisCandi):
     TotalJin(UserData, BarisUser)
     #KinerjaJin(UserData, BarisUser)
-    kinerja = KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser)
+    KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser)
     print("Jumlah Pasir:", int(BahanBangunanData[1][2]))
     print("Jumlah Air: ", int(BahanBangunanData[2][2]))
     print("Jumlah Batu: ", int(BahanBangunanData[3][2]))
