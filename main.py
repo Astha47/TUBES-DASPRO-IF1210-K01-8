@@ -182,12 +182,25 @@ while Run:
   elif command == "bangun" and UserInfo[3] == 'Pembangun':
 
     data = F06.bangun(CandiData, BahanBangunanData, BarisCandi, UserInfo[3])
-    CandiData = data[0]
-    BahanBangunanData = data[1]
-    #print("Candi :",CandiData)
-    #print("Bahan Bangunan :",BahanBangunanData)
+    
+    if data[2]:
+
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+
+      CandiData = data[0]
+      BahanBangunanData = data[1]
+      #print("Candi :",CandiData)
+      #print("Bahan Bangunan :",BahanBangunanData)
     
   elif command == "kumpul" and UserInfo[3] == 'Pengumpul':
+
+    UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+    CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+    BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+    cacheIndex += 1
 
     BahanBangunanData = F07.kumpul(BahanBangunanData)
 
