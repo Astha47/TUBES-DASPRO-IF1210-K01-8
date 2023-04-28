@@ -34,9 +34,9 @@ def ayamberkokok(CandiData, BarisCandi):
     print("Kukuruyuk.. Kukuruyuk..")
     totalCandi = "Jumlah candi : " + str(JumlahCandi)  
     if JumlahCandi < 100 :
-        output = print("Selamat, Roro Jonggrang memenangkan permainan!\n \n*Bandung Bondowoso angry noise*\n \nRoro Jonggrang dikutuk menjadi candi." )
+        hasil = print("Selamat, Roro Jonggrang memenangkan permainan!\n \n*Bandung Bondowoso angry noise*\n \nRoro Jonggrang dikutuk menjadi candi." )
     else :
-        output = print("Yah, Bandung Bondowoso memenangkan permainan!")
+        hasil = print("Yah, Bandung Bondowoso memenangkan permainan!")
 
     return totalCandi
 
@@ -44,4 +44,3 @@ def ayamberkokok(CandiData, BarisCandi):
 
 
 
-    

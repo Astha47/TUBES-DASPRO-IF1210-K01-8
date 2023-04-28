@@ -38,6 +38,8 @@ def help(userInfo) :
         print("Untuk mengetahui progress pembangunan candi dari laporan")
         print("9. save")
         print("Untuk menyimpan data permainan")
+        print("10. exit")
+        print("Untuk keluar dari program dan kembali ke terminal")
     elif userInfo[3] == "roro_jonggrang" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
@@ -47,15 +49,21 @@ def help(userInfo) :
         print("Untuk menyelesaikan permainan dengan memalsukan pagi hari")
         print("4. save")
         print("Untuk menyimpan data permainan")
+        print("5. exit")
+        print("Untuk keluar dari program dan kembali ke terminal")
     elif userInfo[3] == "Pengumpul" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
         print("2. kumpul")
         print("Untuk mengumpulkan resource candi")
+        print("3. exit")
+        print("Untuk keluar dari program dan kembali ke terminal")
     elif userInfo[3] == "Pembangun" :
         print("1. logout")
         print("untuk keluar dari akun yang digunakan sekarang")
         print("2. bangun")
         print("Untuk membangun candi")
+        print("3. exit")
+        print("Untuk keluar dari program dan kembali ke terminal")
     return 
 

@@ -1,14 +1,32 @@
-#NOTAL
-"""
 PROGRAM AyamBerkokok
-{ Spesifikasi :  }
+{ Spesifikasi : Menyelesaikan permainan dengan memalsukan pagi hari dan memberikan output berupa total candi yang telah dibangun dan pemenang dari permainan }
 
 KAMUS 
 
+function ayamberkokok (CandiData : array of string, BarisCandi : integer) -> integer
+{ Memberikan output berupa hasil akhir dari permainan/program yang telah dijalankan }
+
+KAMUS Lokal
+
 ALGORITMA
+    JumlahCandi = hitungjumlah(CandiData, BarisCandi)
+    output ("Kukuruyuk.. Kukuruyuk..")
+    totalCandi = "Jumlah candi" + str(JumlahCandi)
+    if JumlahCandi < 100 then  
+        hasil <- output ("Selamat, Roro Jonggrang memenangkan permainan!\n \n*Bandung Bondowoso angry noise*\n \nRoro Jonggrang dikutuk menjadi candi." )
+    else 
+        hasil <- output ("Yah, Bandung Bondowoso memenangkan permainan!")
 
+    -> totalCandi
 
+function hitungjumlah (CandiData, BarisCandi -> integer) -> integer   
+{ Menghasilkan jumlah candi yang telah dibangun }
 
+KAMUS Lokal
 
-
-"""
+ALGORITMA 
+    jumlah <- 0
+    i traversal [1..BarisCandi]
+        if CandiData[i][0] != '' then
+            jumlah = jumlah + 1
+    -> jumlah
