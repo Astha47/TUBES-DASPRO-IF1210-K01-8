@@ -57,9 +57,7 @@ Run = False
 UserDataCache = [[],3]
 CandiDataCache = [[],5]
 BahanBangunanDataCache = [[],3]
-cacheIndexUser = 0
-cacheIndexCandi = 0
-cacheIndexBahanBangunan = 0
+cacheIndex = 0
 
 # PARSER
 parser = argparse.ArgumentParser()
@@ -143,8 +141,10 @@ while Run:
     DataSementara = F03.summonjin(UserData, BarisUser)
     
     if DataSementara[0]:
-      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndexUser)
-      cacheIndexUser += 1
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
       UserData = DataSementara[1]
       
 
@@ -155,10 +155,10 @@ while Run:
     aksi = F04.hapusjin(UserData, BarisUser)
     if aksi[0]:
 
-      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndexUser)
-      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndexCandi)
-      cacheIndexUser += 1
-      cacheIndexCandi += 1
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
 
       #Delete User Jin
       UserData[aksi[1]] = ['','','']
