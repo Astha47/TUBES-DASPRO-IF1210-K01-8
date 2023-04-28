@@ -65,5 +65,4 @@ def help(userInfo) :
         print("Untuk membangun candi")
         print("3. exit")
         print("Untuk keluar dari program dan kembali ke terminal")
-    return 
 
