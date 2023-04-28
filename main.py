@@ -181,7 +181,7 @@ while Run:
 
   elif command == "laporanjin" and UserInfo[3] == 'bandung_bondowoso':
 
-    F09.ambillaporanjin(UserData, BarisUser, BahanBangunanData)
+    F09.ambillaporanjin(UserData, BarisUser, BahanBangunanData, CandiData, BarisCandi)
 
   elif command == "laporancandi" and UserInfo[3] == 'bandung_bondowoso':
 

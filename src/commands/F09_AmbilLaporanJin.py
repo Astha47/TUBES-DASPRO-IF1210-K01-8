@@ -20,6 +20,8 @@ def TotalJin(UserData, BarisUser):
     print(f"Total Jin Pengumpul: {TotalKumpul}")
     print(f"Total Jin Pembangun: {TotalBangun}")
 
+"""
+# Aku takeoverdulu yah
 def KinerjaJin(UserData, BarisUser):
     Terajin = int(UserData[1][3])
     Termalas = int(UserData[1][3])
@@ -55,9 +57,10 @@ def KinerjaJin(UserData, BarisUser):
     JinTermalas = First
     print("Jin Terajin: ", JinTerajin)
     print("Jin Termalas: ", JinTermalas)
+"""
     
 
-def ambillaporanjin(UserData, BarisUser, BahanBangunanData):
+def ambillaporanjin(UserData, BarisUser, BahanBangunanData, CandiData, BarisCandi):
     TotalJin(UserData, BarisUser)
     KinerjaJin(UserData, BarisUser)
     print("Jumlah Pasir:", int(BahanBangunanData[1][2]))
