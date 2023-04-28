@@ -169,7 +169,15 @@ while Run:
 
   elif command == "ubahjin" and UserInfo[3] == 'bandung_bondowoso':
 
-    UserData = F05.ubahjin(UserData, BarisUser)
+     DataSementara =F05.ubahjin(UserData, BarisUser)
+     if DataSementara[0]:
+       
+        UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+        CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+        BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+        cacheIndex += 1
+       
+        UserData = DataSementara[1]
 
   elif command == "bangun" and UserInfo[3] == 'Pembangun':
 

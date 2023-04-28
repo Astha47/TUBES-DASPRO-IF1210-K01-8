@@ -27,6 +27,8 @@ def ubahjin(UserData, BarisUser):
     data = cariUsernameJin(UserData, BarisUser, usernameJin)
     #print('data :',data[0])
 
+    aksi = False
+
     if data[0] == True:
         #print('dikerjakan')
 
@@ -41,8 +43,11 @@ def ubahjin(UserData, BarisUser):
         if aksi == 'y' or aksi == 'Y':
             UserData[data[1]][2] = roleAkhir
             print("Tipe jin berhasil diubah.")
+            aksi = True
     else:
         print()
         print("Tidak ada jin dengan username tersebut.")
+
+    output = [aksi, UserData]
         
-    return UserData
+    return output
