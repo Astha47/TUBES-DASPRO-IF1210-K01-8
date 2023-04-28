@@ -26,6 +26,7 @@ def usernameFinder(UserData, BarisUser, keyword):
 
 def summonjin(UserData, BarisUser):
     Empty = isThereEmpty(UserData, BarisUser)
+    Perubahan = False
     
     if Empty:
         # Memberikan perintah pada user
@@ -89,10 +90,13 @@ def summonjin(UserData, BarisUser):
         time.sleep(1)
         print()
         print('Jin '+newJinUsername+' berhasil dipanggil!')
+        
+        Perubahan = True
 
 
     else:
         print("Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
 
     # Menuliskan pemrosesan
-    return UserData
+    output = [Perubahan, UserData]
+    return output

@@ -13,8 +13,4 @@ pasirAwal, batuAwal, airAwal : integer
 function kumpul(BahanBangunanData) -> BahanBangunanData
 
 
-
-
-
-
 """
