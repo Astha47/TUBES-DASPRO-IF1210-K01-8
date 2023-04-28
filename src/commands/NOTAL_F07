@@ -11,7 +11,7 @@ function kumpul(BahanBangunanData : array of string ) -> string
 
 ALGORITMA
     pasir <- RNG.RNG(5)
-    batu <- RNG.RNG(5)
+    batu <- RNG.RNG(5) 
     air <- RNG.RNG(5)
     output("Jin menemukan",pasir,"pasir,",batu,"batu, dan",air,"air.")
 
