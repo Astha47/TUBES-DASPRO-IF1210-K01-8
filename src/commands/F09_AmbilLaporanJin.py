@@ -58,11 +58,45 @@ def KinerjaJin(UserData, BarisUser):
     print("Jin Terajin: ", JinTerajin)
     print("Jin Termalas: ", JinTermalas)
 """
+
+def KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser):
+    
+    jumlah = 0
+    for i in range(1, BarisUser):
+        if UserData[i][2] == 'Pembangun':
+            jumlah += 1
+
+    Pembangun = [['username', 0] for i in range(jumlah)] # Kolom pertama adalah username dan kolom kedua adalah jumlah
+
+    # input username
+    iterator = 0
+    for i in range(1, BarisUser):
+        if UserData[i][2] == 'Pengumpul':
+            Pembangun[iterator][0] = UserData[i][0]
+            iterator += 1
+
+    # Hitung candi yang dibangun
+    for i in range(jumlah):
+        for j in range(1, BarisCandi):
+            if Pembangun[i][0] == CandiData[j][1]:
+                Pembangun[i][1] += 1
+    
+    rekorcandi = 0
+    for i in range(jumlah):
+        if Pembangun[i][1] >= rekorcandi:
+            rekorcandi = Pembangun[i][1]
+
+    # Hitung jumlah jin teratas
+    # sudah pasti lebih dari nol apabila data data tidak kosong
+
+    
+    return
     
 
 def ambillaporanjin(UserData, BarisUser, BahanBangunanData, CandiData, BarisCandi):
     TotalJin(UserData, BarisUser)
-    KinerjaJin(UserData, BarisUser)
+    #KinerjaJin(UserData, BarisUser)
+    kinerja = KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser)
     print("Jumlah Pasir:", int(BahanBangunanData[1][2]))
     print("Jumlah Air: ", int(BahanBangunanData[2][2]))
     print("Jumlah Batu: ", int(BahanBangunanData[3][2]))
