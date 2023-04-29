@@ -217,9 +217,14 @@ while Run:
   elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
 
     data = F08.batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData)
-    UserData            = data[0]
-    CandiData           = data[1]
-    BahanBangunanData   = data[2]
+    if data[3]:
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+      UserData            = data[0]
+      CandiData           = data[1]
+      BahanBangunanData   = data[2]
 
   elif command == "laporanjin" and UserInfo[3] == 'bandung_bondowoso':
 
