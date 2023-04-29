@@ -1,7 +1,7 @@
 def SaveCache(arrayCache, array, barisarray, cacheindex):
 
-    print('Cache lama', arrayCache)
-    print('Array yang akan dimasukkan : ', array)
+    #print('Cache lama', arrayCache)
+    #print('Array yang akan dimasukkan : ', array)
 
     oldarray = arrayCache[0]
     bariscache = cacheindex*barisarray
