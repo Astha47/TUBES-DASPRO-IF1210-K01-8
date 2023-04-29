@@ -14,7 +14,7 @@ userInfo : array of string (username, password, role, loginSession)
 def help(userInfo) :
     print("=========== HELP ===========")
     #print(userInfo)
-    if userInfo[0] == False :
+    if userInfo[3] == False :
         print("1.login")
         print ("Untuk masuk menggunakan akun")
         print("2. exit")
