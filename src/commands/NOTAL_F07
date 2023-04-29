@@ -8,6 +8,8 @@ pasirAwal, batuAwal, airAwal : integer
 
 function kumpul(BahanBangunanData : array of string ) -> string
 { Menghasilkan jumlah bahan bangunan (pasir, batu, dan air) dengan jumlah yangg random antara 0-5 dan menyimpannya dalam file BahanBangunanData }
+{ I.S }
+{ F.S }
 
 ALGORITMA
     pasir <- RNG.RNG(5)

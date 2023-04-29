@@ -5,12 +5,13 @@ KAMUS
 userInfo : array of string (username, password, role, loginSession)
 
 procedure help(input : userInfo output : void)
+{ Spesifikasi : Menampilkan informasi command yang dapat digunakan oleh user tergantung role yang dijalankan oleh user }
 { I.S : userInfo terdefinisi, menerima input "help" dari user }
 { F.S : Menampilkan informasi command yang dapat digunakan oleh user tergantung role yang dijalankan oleh user }
 
 ALGORITMA
     output("=========== HELP ===========")
-    if (userInfo[0] == False) then
+    if (userInfo[3] == False) then
         output("1.login")
         output("Untuk masuk menggunakan akun")
         output("2. exit")

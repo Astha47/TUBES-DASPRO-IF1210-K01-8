@@ -7,6 +7,8 @@ masukan : string
 
 function exit(Run : boolean) -> boolean
 {Fungsi ini akan menampilkan pesan apakah user ingin melakukan penyimpanan file sebelum keluar dari program lalu mengakhiri program dan keluar dari program}
+{ I.S user telah login, menerima input "exit" dari user }
+{ F.S keluar dari program dan pilihan untuk menyimpan data atau tidak tergantung masukan dari user }
 
 ALGORITMA
     input (masukan)
