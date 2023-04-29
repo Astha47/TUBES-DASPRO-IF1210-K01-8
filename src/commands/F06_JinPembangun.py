@@ -39,6 +39,8 @@ def bangun(CandiData, BahanBangunanData, BarisCandi, UserJin):
     stokbatu  = int(BahanBangunanData[2][2])
     stokair   = int(BahanBangunanData[3][2])
 
+    aksi = False
+
     if butuhpasir <= stokpasir and butuhbatu <= stokbatu and butuhair <= stokair:
         
 
@@ -61,10 +63,11 @@ def bangun(CandiData, BahanBangunanData, BarisCandi, UserJin):
 
         print("Candi berhasil dibangun.")
         print("Sisa candi yang perlu dibangun: "+str(100-isi)+".")
+        aksi = True
 
 
     else:
         print("Bahan bangunan tidak mencukupi.")
         print("Candi tidak bisa dibangun!")
 
-    return [CandiData,BahanBangunanData]
+    return [CandiData,BahanBangunanData, aksi]

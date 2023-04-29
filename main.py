@@ -20,6 +20,7 @@ import src.commands.F13_Load                    as F13
 import src.commands.F14_Save                    as F14
 import src.commands.F15_Help                    as F15
 import src.commands.F16_Exit                    as F16
+import src.toolkit.B05_UndoStep                  as B05
 #import src.toolkit.SaveCache                    as SaveCache
 
 # DEFINISI DAN SPESIFIKASI VARIABEL GLOBAL
@@ -53,9 +54,9 @@ UndoDump : {  DumpCandi       = Array data candi yang terhapus
 # INISIALISASI
 UserInfo = [False, "", "", ""]
 Run = False
-UserDataCache = [[[]],0,3]
-CandiDataCache = [[[]],0,5]
-BahanBangunanDataCache = [[[]],0,3]
+UserDataCache = [[],3]
+CandiDataCache = [[],5]
+BahanBangunanDataCache = [[],3]
 cacheIndex = 0
 
 # PARSER
@@ -137,7 +138,15 @@ while Run:
 
   elif command == "summonjin" and UserInfo[3] == 'bandung_bondowoso':
 
-    UserData = F03.summonjin(UserData, BarisUser)
+    DataSementara = F03.summonjin(UserData, BarisUser)
+    
+    if DataSementara[0]:
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+      UserData = DataSementara[1]
+      
 
   elif command == "hapusjin" and UserInfo[3] == 'bandung_bondowoso':
 
@@ -145,6 +154,12 @@ while Run:
 
     aksi = F04.hapusjin(UserData, BarisUser)
     if aksi[0]:
+
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+
       #Delete User Jin
       UserData[aksi[1]] = ['','','']
       #Delete Candi yang Dibangun Jin
@@ -154,30 +169,62 @@ while Run:
 
   elif command == "ubahjin" and UserInfo[3] == 'bandung_bondowoso':
 
-    UserData = F05.ubahjin(UserData, BarisUser)
+     DataSementara =F05.ubahjin(UserData, BarisUser)
+     if DataSementara[0]:
+       
+        UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+        CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+        BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+        cacheIndex += 1
+       
+        UserData = DataSementara[1]
 
   elif command == "bangun" and UserInfo[3] == 'Pembangun':
 
     data = F06.bangun(CandiData, BahanBangunanData, BarisCandi, UserInfo[3])
-    CandiData = data[0]
-    BahanBangunanData = data[1]
-    #print("Candi :",CandiData)
-    #print("Bahan Bangunan :",BahanBangunanData)
+    
+    if data[2]:
+
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+
+      CandiData = data[0]
+      BahanBangunanData = data[1]
+      #print("Candi :",CandiData)
+      #print("Bahan Bangunan :",BahanBangunanData)
     
   elif command == "kumpul" and UserInfo[3] == 'Pengumpul':
+
+    UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+    CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+    BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+    cacheIndex += 1
 
     BahanBangunanData = F07.kumpul(BahanBangunanData)
 
   elif command == "batchkumpul" and UserInfo[3] == 'bandung_bondowoso':
 
-    BahanBangunanData = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
+    DataSementara = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
+    if DataSementara[0]:
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+      BahanBangunanData = DataSementara[1]
 
   elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
 
     data = F08.batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData)
-    UserData            = data[0]
-    CandiData           = data[1]
-    BahanBangunanData   = data[2]
+    if data[3]:
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+      UserData            = data[0]
+      CandiData           = data[1]
+      BahanBangunanData   = data[2]
 
   elif command == "laporanjin" and UserInfo[3] == 'bandung_bondowoso':
 
@@ -208,9 +255,22 @@ while Run:
     Run = F16.exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
 
   #elif command == "undo":
-    #SaveCache.SaveCache()
+  #elif command == "savecache":
+    #UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+    #CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+    #BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+    #cacheIndex += 1
+    
   elif command == "undostep":
-    print("yahahah belum jadi")
+    if cacheIndex < 1:
+      print("Tidak ada langkah sebelum kondisi saat ini!")
+    else:
+      BahanBangunanDataProcess = B05.undostep(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      BahanBangunanData = BahanBangunanDataProcess[0]
+      BahanBangunanDataCache = BahanBangunanDataProcess[1]
+      cacheIndex += -1
+      print(BahanBangunanData)
+    
   else:
     print("Command yang anda masukkan salah!")
     print('gunakan "help" untuk menampilkan petunjuk')

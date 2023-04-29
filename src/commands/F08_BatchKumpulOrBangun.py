@@ -27,6 +27,7 @@ def hitungCandi(CandiData, BarisCandi):
 def batchkumpul(BahanBangunanData, UserData, BarisUser):
     Tipe = 'Pengumpul'
     jumlah = hitungJin(UserData, BarisUser, Tipe)
+    status = False
 
     if jumlah > 0:
         pasir = 0
@@ -55,15 +56,18 @@ def batchkumpul(BahanBangunanData, UserData, BarisUser):
         BahanBangunanData[2][2] = str(batu)
         BahanBangunanData[3][2] = str(air)
 
+        status = True
+
     else:
         print('Kumpul gagal. Anda tidak punya jin pengumpul. Silahkan summon terlebih dahulu.')
 
-    return BahanBangunanData
+    return [status, BahanBangunanData]
 
 
 def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
     Tipe = 'Pembangun'
     jumlah = hitungJin(UserData, BarisUser, Tipe)
+    status = False
 
     if jumlah>0:
         """jumlahCandi = hitungCandi(CandiData)
@@ -169,6 +173,8 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
             jumlahCandi = hitungCandi(CandiData, BarisCandi)
             kekurangan = 100-jumlahCandi
             print("Sisa candi yang perlu dibangun: "+str(kekurangan)+".")
+
+            status = True
             
         else:
             # hitung kekurangan
@@ -203,4 +209,4 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
     else:
         print('Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.')
 
-    return [UserData, CandiData, BahanBangunanData]
+    return [UserData, CandiData, BahanBangunanData, status]
