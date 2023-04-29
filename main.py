@@ -205,14 +205,30 @@ while Run:
     BahanBangunanData = F07.kumpul(BahanBangunanData)
 
   elif command == "batchkumpul" and UserInfo[3] == 'bandung_bondowoso':
+    
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+    # Isi array lama
+    
+
 
     DataSementara = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
     if DataSementara[0]:
-      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      print("BahanBangunanChace sblm : ", BahanBangunanDataCache)
+      print("Bahan bangunan awal : ", BahanBangunanData)
+      UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
       cacheIndex += 1
       BahanBangunanData = DataSementara[1]
+
+      # DEBUG
+      print("BahanBangunanChace ssdh : ", BahanBangunanDataCache)
+      print("Bahan bangunan sekaranh = ", BahanBangunanData)
+      print("Index cache sekarang = ", cacheIndex)
+
 
   elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
 
@@ -265,11 +281,26 @@ while Run:
     if cacheIndex < 1:
       print("Tidak ada langkah sebelum kondisi saat ini!")
     else:
+      #print("cacheindex yang dijalankan di data bahan bangunan : " , cacheIndex)
       BahanBangunanDataProcess = B05.undostep(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
       BahanBangunanData = BahanBangunanDataProcess[0]
       BahanBangunanDataCache = BahanBangunanDataProcess[1]
+
+      UserDataProcess = B05.undostep(UserDataCache, UserData, BarisUser, cacheIndex)
+      UserData = UserDataProcess[0]
+      UserDataCache = UserDataProcess[1]
+
+      
+      CandiDataProcess = B05.undostep(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      CandiData = CandiDataProcess[0]
+      CandiDataCache = CandiDataProcess[1]
+        
+
       cacheIndex += -1
-      print(BahanBangunanData)
+
+      print("Bahan bangunan pasca diundo = ", BahanBangunanData)
+      print("Cache yang tersisa = ", BahanBangunanDataCache)
+      print("Cache index sekarang = ", cacheIndex)
     
   else:
     print("Command yang anda masukkan salah!")

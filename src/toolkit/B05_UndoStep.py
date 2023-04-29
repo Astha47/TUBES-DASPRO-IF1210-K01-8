@@ -1,4 +1,8 @@
 def SaveCache(arrayCache, array, barisarray, cacheindex):
+
+    print('Cache lama', arrayCache)
+    print('Array yang akan dimasukkan : ', array)
+
     oldarray = arrayCache[0]
     bariscache = cacheindex*barisarray
     kolomcache = arrayCache[1]
@@ -24,7 +28,7 @@ def SaveCache(arrayCache, array, barisarray, cacheindex):
     output = [newarray, kolomcache]
 
     # DEBUG
-    print(newarray)
+    #print(newarray)
 
     return output
 
@@ -32,6 +36,9 @@ def undostep(arraycache, arraytarget, barisarray, cacheindex):
     # Mengambil Data
     cache = arraycache[0]
     kolomarray = arraycache[1]
+
+    # DEBUG
+    #print("Kolom array : ", kolomarray)
 
     for i in range(barisarray*(cacheindex-1), barisarray*cacheindex):
         for j in range(kolomarray):
@@ -49,4 +56,13 @@ def undostep(arraycache, arraytarget, barisarray, cacheindex):
         for j in range(kolomarray):
             newarray[i][j] = cache[i][j]
 
-    return [arraytarget, newarray]
+    return [arraytarget, [newarray, kolomarray]]
+
+# Debug
+
+"""arraycache = [[[1,2,3],[1,2,3]],3]
+cacheindex = 1
+barisData = 2
+arraytarget = [[0,0,0],[0,0,0]]
+
+print(undostep(arraycache, arraytarget, barisData, cacheindex))"""
