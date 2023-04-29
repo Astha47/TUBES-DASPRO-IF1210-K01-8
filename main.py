@@ -206,7 +206,13 @@ while Run:
 
   elif command == "batchkumpul" and UserInfo[3] == 'bandung_bondowoso':
 
-    BahanBangunanData = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
+    DataSementara = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
+    if DataSementara[0]:
+      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
+      BahanBangunanData = DataSementara[1]
 
   elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
 
