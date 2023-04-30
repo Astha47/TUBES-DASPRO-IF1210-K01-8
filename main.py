@@ -138,6 +138,24 @@ while Run:
 
   elif command == "summonjin" and UserInfo[3] == 'bandung_bondowoso':
 
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+
+    # Isi array lama
+    for i in range(BarisUser):
+      for j in range(KolomUser):
+        UserDataOld[i][j] = UserData[i][j]
+
+    for i in range(BarisCandi):
+      for j in range(KolomCandi):
+        CandiDataOld[i][j] = CandiData[i][j]
+
+    for i in range(BarisBBangunan):
+      for j in range(KolomBBangunan):
+        BahanBangunanDataOld[i][j] = BahanBangunanData[i][j]
+
     DataSementara = F03.summonjin(UserData, BarisUser)
     
     if DataSementara[0]:
@@ -152,12 +170,30 @@ while Run:
 
     # Aksi prosedural multivariable
 
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+
+    # Isi array lama
+    for i in range(BarisUser):
+      for j in range(KolomUser):
+        UserDataOld[i][j] = UserData[i][j]
+
+    for i in range(BarisCandi):
+      for j in range(KolomCandi):
+        CandiDataOld[i][j] = CandiData[i][j]
+
+    for i in range(BarisBBangunan):
+      for j in range(KolomBBangunan):
+        BahanBangunanDataOld[i][j] = BahanBangunanData[i][j]
+
     aksi = F04.hapusjin(UserData, BarisUser)
     if aksi[0]:
 
-      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
       cacheIndex += 1
 
       #Delete User Jin
@@ -169,25 +205,62 @@ while Run:
 
   elif command == "ubahjin" and UserInfo[3] == 'bandung_bondowoso':
 
-     DataSementara =F05.ubahjin(UserData, BarisUser)
-     if DataSementara[0]:
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+
+    # Isi array lama
+    for i in range(BarisUser):
+      for j in range(KolomUser):
+        UserDataOld[i][j] = UserData[i][j]
+
+    for i in range(BarisCandi):
+      for j in range(KolomCandi):
+        CandiDataOld[i][j] = CandiData[i][j]
+
+    for i in range(BarisBBangunan):
+      for j in range(KolomBBangunan):
+        BahanBangunanDataOld[i][j] = BahanBangunanData[i][j]
+     
+
+    DataSementara =F05.ubahjin(UserData, BarisUser)
+    if DataSementara[0]:
+      
+      UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
+      cacheIndex += 1
        
-        UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-        CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-        BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
-        cacheIndex += 1
-       
-        UserData = DataSementara[1]
+      UserData = DataSementara[1]
 
   elif command == "bangun" and UserInfo[3] == 'Pembangun':
+
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+
+    # Isi array lama
+    for i in range(BarisUser):
+      for j in range(KolomUser):
+        UserDataOld[i][j] = UserData[i][j]
+
+    for i in range(BarisCandi):
+      for j in range(KolomCandi):
+        CandiDataOld[i][j] = CandiData[i][j]
+
+    for i in range(BarisBBangunan):
+      for j in range(KolomBBangunan):
+        BahanBangunanDataOld[i][j] = BahanBangunanData[i][j]
 
     data = F06.bangun(CandiData, BahanBangunanData, BarisCandi, UserInfo[3])
     
     if data[2]:
 
-      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
       cacheIndex += 1
 
       CandiData = data[0]
@@ -197,30 +270,94 @@ while Run:
     
   elif command == "kumpul" and UserInfo[3] == 'Pengumpul':
 
-    UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-    CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-    BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+
+    # Isi array lama
+    for i in range(BarisUser):
+      for j in range(KolomUser):
+        UserDataOld[i][j] = UserData[i][j]
+
+    for i in range(BarisCandi):
+      for j in range(KolomCandi):
+        CandiDataOld[i][j] = CandiData[i][j]
+
+    for i in range(BarisBBangunan):
+      for j in range(KolomBBangunan):
+        BahanBangunanDataOld[i][j] = BahanBangunanData[i][j]
+
+    UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
+    CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
+    BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
     cacheIndex += 1
 
     BahanBangunanData = F07.kumpul(BahanBangunanData)
 
   elif command == "batchkumpul" and UserInfo[3] == 'bandung_bondowoso':
+    
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+
+    # Isi array lama
+    for i in range(BarisUser):
+      for j in range(KolomUser):
+        UserDataOld[i][j] = UserData[i][j]
+
+    for i in range(BarisCandi):
+      for j in range(KolomCandi):
+        CandiDataOld[i][j] = CandiData[i][j]
+
+    for i in range(BarisBBangunan):
+      for j in range(KolomBBangunan):
+        BahanBangunanDataOld[i][j] = BahanBangunanData[i][j]
+
 
     DataSementara = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
     if DataSementara[0]:
-      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      #print("BahanBangunanChace sblm : ", BahanBangunanDataCache)
+      #print("Bahan bangunan awal : ", BahanBangunanDataOld)
+      UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
       cacheIndex += 1
       BahanBangunanData = DataSementara[1]
 
+      # DEBUG
+      #print("BahanBangunanChace ssdh : ", BahanBangunanDataCache)
+      #print("Bahan bangunan sekaranh = ", BahanBangunanData)
+      #print("Index cache sekarang = ", cacheIndex)
+
+
   elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
+
+    # Definisikan array lama
+    UserDataOld = [[0 for i in range(KolomUser)] for i in range(BarisUser)]
+    CandiDataOld = [[0 for i in range(KolomCandi)] for i in range(BarisCandi)]
+    BahanBangunanDataOld = [[0 for i in range(KolomBBangunan)] for i in range(BarisBBangunan)]
+
+    # Isi array lama
+    for i in range(BarisUser):
+      for j in range(KolomUser):
+        UserDataOld[i][j] = UserData[i][j]
+
+    for i in range(BarisCandi):
+      for j in range(KolomCandi):
+        CandiDataOld[i][j] = CandiData[i][j]
+
+    for i in range(BarisBBangunan):
+      for j in range(KolomBBangunan):
+        BahanBangunanDataOld[i][j] = BahanBangunanData[i][j]
 
     data = F08.batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData)
     if data[3]:
-      UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-      CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
+      #print("Data Bahan bangunan awal : ",BahanBangunanData)
+      UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
+      CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
+      BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
       cacheIndex += 1
       UserData            = data[0]
       CandiData           = data[1]
@@ -229,26 +366,32 @@ while Run:
   elif command == "laporanjin" and UserInfo[3] == 'bandung_bondowoso':
 
     F09.ambillaporanjin(UserData, BarisUser, BahanBangunanData, CandiData, BarisCandi)
+    print()
 
   elif command == "laporancandi" and UserInfo[3] == 'bandung_bondowoso':
 
     F10.AmbilLaporanCandi(CandiData, BarisCandi)
+    print()
 
   elif command == "hancurkancandi" and UserInfo[3] == 'roro_jonggrang':
 
     CandiData = F11.hancurkancandi(CandiData, BarisCandi)
+    print()
 
   elif command == "ayamberkokok" and UserInfo[3] == 'roro_jonggrang':
 
     F12.ayamberkokok(CandiData, BarisCandi)
+    print()
     
   elif command == "save"and UserInfo[0] == True:
 
     F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
+    print()
 
   elif command == "help":
 
     F15.help(UserInfo)
+    print()
 
   elif command == "exit":
 
@@ -265,11 +408,29 @@ while Run:
     if cacheIndex < 1:
       print("Tidak ada langkah sebelum kondisi saat ini!")
     else:
+      #print("cacheindex yang dijalankan di data bahan bangunan : " , cacheIndex)
       BahanBangunanDataProcess = B05.undostep(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
       BahanBangunanData = BahanBangunanDataProcess[0]
       BahanBangunanDataCache = BahanBangunanDataProcess[1]
+
+      UserDataProcess = B05.undostep(UserDataCache, UserData, BarisUser, cacheIndex)
+      UserData = UserDataProcess[0]
+      UserDataCache = UserDataProcess[1]
+
+      
+      CandiDataProcess = B05.undostep(CandiDataCache, CandiData, BarisCandi, cacheIndex)
+      CandiData = CandiDataProcess[0]
+      CandiDataCache = CandiDataProcess[1]
+        
+
       cacheIndex += -1
-      print(BahanBangunanData)
+
+      print("Undo sukses!")
+      print()
+
+      #print("Bahan bangunan pasca diundo = ", BahanBangunanData)
+      #print("Cache yang tersisa = ", BahanBangunanDataCache)
+      #print("Cache index sekarang = ", cacheIndex)
     
   else:
     print("Command yang anda masukkan salah!")
