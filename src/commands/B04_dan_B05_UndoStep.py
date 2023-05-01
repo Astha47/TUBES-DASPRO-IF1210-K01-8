@@ -37,8 +37,6 @@ def undostep(arraycache, arraytarget, barisarray, cacheindex):
     cache = arraycache[0]
     kolomarray = arraycache[1]
 
-    # DEBUG
-    #print("Kolom array : ", kolomarray)
 
     for i in range(barisarray*(cacheindex-1), barisarray*cacheindex):
         for j in range(kolomarray):
