@@ -29,16 +29,6 @@ def load(FileDirectory,baris,kolom):
     isiperline[jumlahBaris-1] = currentText
     
     #print("Isi perline :", isiperline)
-
-    # Memisahkan per kolom
-    """
-    # hitung kolom
-    jumlahKolom = 1
-    for i in range(len(isiperline[0])):
-        print(isiperline[0][i])
-        if isiperline[0][i] == ";":
-            jumlahKolom += 1
-    """
     
     # Masukkan isi Array
     for i in range(jumlahBaris):

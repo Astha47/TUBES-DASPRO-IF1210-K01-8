@@ -3,10 +3,10 @@
 # SPESIFIKASI DAN DEFINISI
 
 """
-UserActive : {  loginsession : Boolean
-                username     : String
-                password     : String
-                role         : String }
+type UserActive : {   loginsession : Boolean
+                      username     : String
+                      password     : String
+                      role         : String }
 """
 
 # procedure memintaAutentikasi (output auth : list of strings)

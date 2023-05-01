@@ -375,7 +375,14 @@ while Run:
 
   elif command == "hancurkancandi" and UserInfo[3] == 'roro_jonggrang':
 
-    CandiData = F11.hancurkancandi(CandiData, BarisCandi)
+    RawData = F11.hancurkancandi(CandiData, BarisCandi)
+
+    if RawData[0] == True:
+      CandiData = RawData[1]
+      UserDataCache = [[],3]
+      CandiDataCache = [[],5]
+      BahanBangunanDataCache = [[],3]
+
     print()
 
   elif command == "ayamberkokok" and UserInfo[3] == 'roro_jonggrang':
@@ -404,7 +411,7 @@ while Run:
     #BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
     #cacheIndex += 1
     
-  elif command == "undostep":
+  elif command == "undo" and UserInfo[3] == 'bandung_bondowoso':
     if cacheIndex < 1:
       print("Tidak ada langkah sebelum kondisi saat ini!")
     else:

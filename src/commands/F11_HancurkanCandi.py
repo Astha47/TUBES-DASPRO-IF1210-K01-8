@@ -20,13 +20,18 @@ def hancurkancandi(CandiData, BarisCandi):
 
     data = idFinder(CandiData, BarisCandi, id)
 
+    aksi = False
+
     if data[0]:
         action = getaction(id)
         if action == 'y' or action == 'Y':
             CandiData[data[1]] = ['','','','','']
             print()
             print('Candi telah berhasil dihancurkan.')
+            aksi = True
     else:
         print('Tidak ada candi dengan ID tersebut.')
 
-    return CandiData
+    output = [aksi, CandiData]
+
+    return output
