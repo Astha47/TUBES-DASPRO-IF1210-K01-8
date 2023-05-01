@@ -20,7 +20,7 @@ import src.commands.F13_Load                    as F13
 import src.commands.F14_Save                    as F14
 import src.commands.F15_Help                    as F15
 import src.commands.F16_Exit                    as F16
-import src.toolkit.B05_UndoStep                  as B05
+import src.commands.B04_dan_B05_UndoStep        as B05
 #import src.toolkit.SaveCache                    as SaveCache
 
 # DEFINISI DAN SPESIFIKASI VARIABEL GLOBAL
