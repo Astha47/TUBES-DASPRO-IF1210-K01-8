@@ -405,7 +405,7 @@ while Run:
       print("Undo sukses!")
       print()
   
-  elif (command == "summonjin" or command == "hapusjin" or command == "ubahjin" or command == "bangun" or command == "kumpul" or command = 'batchkumpul' or command == "laporanjin" or command == "laporancandi" or command == 'hancurkancandi' or command == "ayamberkokok" or command == "save") and UserInfo[0] == False:
+  elif (command == "summonjin" or command == "hapusjin" or command == "ubahjin" or command == "bangun" or command == "kumpul" or command == 'batchkumpul' or command == "laporanjin" or command == "laporancandi" or command == 'hancurkancandi' or command == "ayamberkokok" or command == "save") and UserInfo[0] == False:
     print("Anda belum melakukan login, silakan login trlrbih dahulu!")
   else:
     print("Command yang anda masukkan salah!")
