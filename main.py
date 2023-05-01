@@ -360,6 +360,7 @@ while Run:
       UserDataCache = [[],3]
       CandiDataCache = [[],5]
       BahanBangunanDataCache = [[],3]
+      cacheIndex = 0
 
     print()
 
