@@ -36,9 +36,11 @@ def help(userInfo) :
         print("Untuk mengetahui kinerja jin dari laporan")
         print("8. laporancandi")
         print("Untuk mengetahui progress pembangunan candi dari laporan")
-        print("9. save")
+        print("9. undo")
+        print("Untuk mengembalikan kondisi permainan sebelumnya")
+        print("10. save")
         print("Untuk menyimpan data permainan")
-        print("10. exit")
+        print("11. exit")
         print("Untuk keluar dari program dan kembali ke terminal")
     elif userInfo[3] == "roro_jonggrang" :
         print("1. logout")
