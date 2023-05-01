@@ -369,7 +369,7 @@ while Run:
     F12.ayamberkokok(CandiData, BarisCandi)
     print()
     
-  elif command == "save"and UserInfo[0] == True:
+  elif command == "save"and (UserInfo[3] == 'roro_jonggrang' or UserInfo[3] == 'bandung_bondowoso'):
 
     F14.save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
     print()
@@ -407,7 +407,7 @@ while Run:
       print()
   
   elif (command == "summonjin" or command == "hapusjin" or command == "ubahjin" or command == "bangun" or command == "kumpul" or command == 'batchkumpul' or command == "laporanjin" or command == "laporancandi" or command == 'hancurkancandi' or command == "ayamberkokok" or command == "save") and UserInfo[0] == False:
-    print("Anda belum melakukan login, silakan login trlrbih dahulu!")
+    print("Anda belum melakukan login, silakan login terlebih dahulu!")
   else:
     print("Command yang anda masukkan salah!")
     print('gunakan "help" untuk menampilkan petunjuk')
