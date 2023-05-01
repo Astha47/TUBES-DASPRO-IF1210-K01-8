@@ -98,21 +98,9 @@ if args.SaveGame:
     Harap ini diperhatikan untuk setiap iterasi untuk menghindari fatal error
     """
 
-    # DEBUG
-    #print('Userdata = ',UserData)
-    #print('CandiData = ', CandiData)
-    #print('BahanBangunanData = ',BahanBangunanData)
-    #debug = input()
-
 
     time.sleep(1)
     os.system('cls')
-
-
-    # DEBUG
-    #print(UserData)
-    #print(CandiData)
-    #print(BahanBangunanData)
 
 
     print("Selamat datang di program “Manajerial Candi”\nSilahkan masukkan username Anda")
@@ -265,8 +253,6 @@ while Run:
 
       CandiData = data[0]
       BahanBangunanData = data[1]
-      #print("Candi :",CandiData)
-      #print("Bahan Bangunan :",BahanBangunanData)
     
   elif command == "kumpul" and UserInfo[3] == 'Pengumpul':
 
@@ -318,19 +304,11 @@ while Run:
 
     DataSementara = F08.batchkumpul(BahanBangunanData, UserData, BarisUser)
     if DataSementara[0]:
-      #print("BahanBangunanChace sblm : ", BahanBangunanDataCache)
-      #print("Bahan bangunan awal : ", BahanBangunanDataOld)
       UserDataCache = B05.SaveCache(UserDataCache, UserDataOld, BarisUser, cacheIndex)
       CandiDataCache = B05.SaveCache(CandiDataCache, CandiDataOld, BarisCandi, cacheIndex)
       BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanDataOld, BarisBBangunan, cacheIndex)
       cacheIndex += 1
       BahanBangunanData = DataSementara[1]
-
-      # DEBUG
-      #print("BahanBangunanChace ssdh : ", BahanBangunanDataCache)
-      #print("Bahan bangunan sekaranh = ", BahanBangunanData)
-      #print("Index cache sekarang = ", cacheIndex)
-
 
   elif command == "batchbangun" and UserInfo[3] == 'bandung_bondowoso':
 
@@ -403,19 +381,11 @@ while Run:
   elif command == "exit":
 
     Run = F16.exit(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan)
-
-  #elif command == "undo":
-  #elif command == "savecache":
-    #UserDataCache = B05.SaveCache(UserDataCache, UserData, BarisUser, cacheIndex)
-    #CandiDataCache = B05.SaveCache(CandiDataCache, CandiData, BarisCandi, cacheIndex)
-    #BahanBangunanDataCache = B05.SaveCache(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
-    #cacheIndex += 1
     
   elif command == "undo" and UserInfo[3] == 'bandung_bondowoso':
     if cacheIndex < 1:
       print("Tidak ada langkah sebelum kondisi saat ini!")
     else:
-      #print("cacheindex yang dijalankan di data bahan bangunan : " , cacheIndex)
       BahanBangunanDataProcess = B05.undostep(BahanBangunanDataCache, BahanBangunanData, BarisBBangunan, cacheIndex)
       BahanBangunanData = BahanBangunanDataProcess[0]
       BahanBangunanDataCache = BahanBangunanDataProcess[1]
@@ -434,16 +404,7 @@ while Run:
 
       print("Undo sukses!")
       print()
-
-      #print("Bahan bangunan pasca diundo = ", BahanBangunanData)
-      #print("Cache yang tersisa = ", BahanBangunanDataCache)
-      #print("Cache index sekarang = ", cacheIndex)
     
   else:
     print("Command yang anda masukkan salah!")
     print('gunakan "help" untuk menampilkan petunjuk')
-
-    #DEBUG
-    #print(BahanBangunanData)
-    #print(UserData)
-    #print(CandiData)
