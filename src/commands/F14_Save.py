@@ -9,13 +9,6 @@ def ArrayKeRawString(Array,Kolom,Baris):
                 RawString += ';'
             RawString += Array[i][Kolom-1]
             RawString += '\n'
-    
-    """
-        for k in range(Kolom-1):
-            RawString += Array[Baris-1][k]
-            RawString += ';'
-        RawString += Array[Baris-1][Kolom-1]
-    """
 
     #Potong karakter terakhir
     FinalString = ''
@@ -31,19 +24,23 @@ def ArrayKeRawString(Array,Kolom,Baris):
 #Array = [['asaad','asdasds','asdasds'],['asaad','asdasds','asdasds'],['asaad','asdasds','asdasds']]
 #print(ArrayKeRawString(Array,3,3))
 
+def mintainputfolder():
+    a = input("Masukkan nama folder : ")
+    if a == '':
+        print("Nama folder tidak boleh kosong")
+        return mintainputfolder()
+    elif a == 'newgame':
+        print("Maaf folder tersebut terproteksi")
+        return mintainputfolder()
+    else:
+        return a
+    
+
 
 def save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,KolomCandi,BarisBBangunan,KolomBBangunan):
     parentLocation = 'src/SaveGame'
     
-    validate = True
-    while validate:
-        a = input("Masukkan nama folder : ")
-        if a == '':
-            print("Nama folder tidak boleh kosong")
-        elif a == 'newgame':
-            print("Maaf folder tersebut terproteksi")
-        else:
-            validate = False
+    a = mintainputfolder()
 
     TargetLocation = parentLocation+'/'+a
     if (os.path.isdir(TargetLocation)) == False:
