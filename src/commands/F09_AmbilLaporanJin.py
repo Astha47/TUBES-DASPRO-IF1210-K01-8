@@ -20,44 +20,6 @@ def TotalJin(UserData, BarisUser):
     print(f"Total Jin Pengumpul: {TotalKumpul}")
     print(f"Total Jin Pembangun: {TotalBangun}")
 
-"""
-# Aku takeoverdulu yah
-def KinerjaJin(UserData, BarisUser):
-    Terajin = int(UserData[1][3])
-    Termalas = int(UserData[1][3])
-    for i in range (1, BarisUser):
-        if int(UserData[i][3]) > Terajin:
-            Terjain = int(UserData[i][3])
-    for j in range (1, BarisUser):
-        if int(UserData[j][3]) < Termalas:
-            Termalas = int(UserData[j][3])
-    First = " "
-    for i in range (1, BarisUser):
-        if int(UserData[i][3]) == Terajin:
-            if First == " ":                            # Mengambil nama terajin pertama.
-                First = UserData[i][0]
-            else:                                       # Mengurutkan nama terajin berdasarkan alphabet (terendah).
-                TempAr = [First, UserData[i][0]]
-                if TempAr[0] < TempAr[1]:
-                    First = TempAr[0]
-                else:
-                    First = TempAr[1]  
-    JinTerajin = First
-    First = " "
-    for i in range (1, BarisUser):
-        if int(UserData[i][3]) == Termalas:
-            if First == " ":                            # Mengambil nama termalas pertama.
-                First = UserData[i][0]
-            else:                                       # Mengurutkan nama termalas berdasarkan alphabet (tertinggi).
-                TempAr = [First, UserData[i][0]]
-                if TempAr[0] > TempAr[1]:
-                    First = TempAr[0]
-                else:
-                    First = TempAr[1]                         
-    JinTermalas = First
-    print("Jin Terajin: ", JinTerajin)
-    print("Jin Termalas: ", JinTermalas)
-"""
 def sortingLeksiografis(array,panjang):
     for i in range(panjang):
         for j in range(i+1, panjang):
@@ -153,7 +115,6 @@ def KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser):
 
 def ambillaporanjin(UserData, BarisUser, BahanBangunanData, CandiData, BarisCandi):
     TotalJin(UserData, BarisUser)
-    #KinerjaJin(UserData, BarisUser)
     KinerjaParaJin(CandiData, BarisCandi, UserData, BarisUser)
     print("Jumlah Pasir:", int(BahanBangunanData[1][2]))
     print("Jumlah Air: ", int(BahanBangunanData[2][2]))

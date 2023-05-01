@@ -1,8 +1,4 @@
 def SaveCache(arrayCache, array, barisarray, cacheindex):
-
-    #print('Cache lama', arrayCache)
-    #print('Array yang akan dimasukkan : ', array)
-
     oldarray = arrayCache[0]
     bariscache = cacheindex*barisarray
     kolomcache = arrayCache[1]
@@ -26,9 +22,6 @@ def SaveCache(arrayCache, array, barisarray, cacheindex):
             newarray[i][j] = array[i-bariscache][j]
     
     output = [newarray, kolomcache]
-
-    # DEBUG
-    #print(newarray)
 
     return output
 

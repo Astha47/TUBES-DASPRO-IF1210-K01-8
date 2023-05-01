@@ -97,8 +97,6 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
                     matriksbangun[i][0] = str(j)
                     break
         
-        #Debug Matriks bangun pasca pengisian id candi
-        #print("pasca id candi :",matriksbangun)
         
         # isi username Jin
         iterator = 0
@@ -109,10 +107,6 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
             if iterator == jumlah:
                 break
 
-        #Debug Matriks bangun pasca pengisian username candi
-        #print("pasca username jin :",matriksbangun)
-                
-        
         pasir  = 0
         batu   = 0
         air    = 0
@@ -130,11 +124,6 @@ def batchbangun(CandiData, UserData, BarisCandi, BarisUser, BahanBangunanData):
             matriksbangun[i][3] = str(batubaru)
             matriksbangun[i][4] = str(airbaru)
 
-        #Debug Matriks bangun pasca pengisian bahan candi
-        #print("pasca bahan :",matriksbangun)
-
-        
-        
         # Dapatkan data bahan bangunan
         stokpasir = int(BahanBangunanData[1][2])
         stokbatu  = int(BahanBangunanData[2][2])

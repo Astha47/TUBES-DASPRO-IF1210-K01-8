@@ -13,8 +13,6 @@ def load(FileDirectory,baris,kolom):
     for i in range(len(RawString)):
         if RawString[i] == '\n':
             jumlahBaris += 1
-    
-    #print("Jumlah baris :", jumlahBaris)
 
     currentText = ""
     isiperline = [ 0 for i in range(jumlahBaris)]
@@ -28,8 +26,6 @@ def load(FileDirectory,baris,kolom):
             currentText += RawString[i]
     isiperline[jumlahBaris-1] = currentText
     
-    #print("Isi perline :", isiperline)
-    
     # Masukkan isi Array
     for i in range(jumlahBaris):
         kata = ""
@@ -42,8 +38,4 @@ def load(FileDirectory,baris,kolom):
                 iterasi +=1
                 kata = ""
             Array[i][iterasi] = kata
-
-
     return Array
-
-#print(load("src/SaveGame/debug/bahan_bangunan.csv",4,3))

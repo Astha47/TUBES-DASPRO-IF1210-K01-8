@@ -14,15 +14,7 @@ def ArrayKeRawString(Array,Kolom,Baris):
     FinalString = ''
     for i in range(len(RawString)-1):
         FinalString += RawString[i]
-
-
-    #for debug purpose
-    #RawString += '{This line must be the last line}'
     return FinalString
-
-#DEBUG
-#Array = [['asaad','asdasds','asdasds'],['asaad','asdasds','asdasds'],['asaad','asdasds','asdasds']]
-#print(ArrayKeRawString(Array,3,3))
 
 def mintainputfolder():
     a = input("Masukkan nama folder : ")
@@ -46,9 +38,7 @@ def save(UserData,CandiData,BahanBangunanData,BarisUser,KolomUser,BarisCandi,Kol
     if (os.path.isdir(TargetLocation)) == False:
         print("Membuat folder", a)
         # MEMBUAT SAVE SLOT GAME
-        os.mkdir(TargetLocation)
-        # MEMBUAT FOLDER CACHE
-        #os.mkdir(TargetLocation+'/cache')
+        os.mkdir(TargetLocation)        
     
     RAWTextUserData = ArrayKeRawString(UserData,KolomUser,BarisUser)
     RAWTextCandiData = ArrayKeRawString(CandiData,KolomCandi,BarisCandi)

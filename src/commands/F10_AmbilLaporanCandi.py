@@ -8,11 +8,6 @@ ID Candi Termurah: 1 (Rp 97500)
 """
 
 #"""
-# [BELUM SELESAI]
-# - Ada beberapa fungsi yang harus disesuaikan dengan F06 - Jin Pembangun #OK asumsi aja dulu ~ Fathur
-# - Masih belum tau Nmax dihitung pakai apa #Jumlah baris pada candi.csv yang sudah diimport ke matriks CandiData yang ada di main berjumlah pasti 101 baris, atau supaya aman gunakan variabel BarisCandi yang tersedia di main.py ~ Fathur
-# - Belum ditambah validasi akun Bondowoso (Menyusul) #Itu tinggal diubah di main.py, aman ~ Fathur
-
 # Def AmbilLaporanCandi
 # F10 - Ambil Laporan Candi
 # Fungsi menerima info candi lalu memberikan informasi total candi terbangun, bahan-bahan material yang digunakan, dan ID dari candi termahal dan termurah beserta harganya.
@@ -81,29 +76,3 @@ def AmbilLaporanCandi(CandiData, BarisCandi):
     Material(CandiData, BarisCandi)
     CandiTermahal(CandiData, BarisCandi)
     CandiTermurah(CandiData, BarisCandi)
-    
-"""
-# CONTOH APLIKASI (sementara)
-
-BarisCandi = 101
-CandiData = [['' for i in range(5)] for i in range (BarisCandi)]
-
-# misal sudah terisi
-CandiData[1][0] = "1"
-CandiData[1][2] = "3"
-CandiData[1][3] = "2"
-CandiData[1][4] = "5"
-
-CandiData[2][0] = "2"
-CandiData[2][2] = "4"
-CandiData[2][3] = "3"
-CandiData[2][4] = "2"
-
-CandiData[3][0] = "3"
-CandiData[3][2] = "4"
-CandiData[3][3] = "7"
-CandiData[3][4] = "9"
-
-
-AmbilLaporanCandi(CandiData, BarisCandi)
-"""

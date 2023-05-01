@@ -31,17 +31,9 @@ hasil : string
 #Algoritma
 def kumpul(BahanBangunanData):
 
-    #Debug
-    #print("Bahan bangunan awal : ", BahanBangunanData)
-
-
-    #pasir = random.randint(0,5) 
-    #batu = random.randint(0,5)
-    #air = random.randint(0,5)
     pasir = RNG.RNG(5) 
     batu = RNG.RNG(5)
     air = RNG.RNG(5)
-    #material = [pasir,batu,air]
     print("Jin menemukan",pasir,"pasir,",batu,"batu, dan",air,"air.")
 
     # Masukkan data
@@ -61,6 +53,3 @@ def kumpul(BahanBangunanData):
     return BahanBangunanData
 
 # Debug
-
-#Matriks = [["jenis", "deskripsi", "jumlah"],["pasir","asasfsdf","0"],["batu","asasfsdf","0"],["pasir","air","0"]]
-#NewMatriks = kumpul(Matriks)

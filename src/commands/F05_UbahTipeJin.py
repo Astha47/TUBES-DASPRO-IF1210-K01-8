@@ -23,14 +23,11 @@ def ubahjin(UserData, BarisUser):
 
     # cari data
     # Debug Mencari Data
-    #print('Mencari data jin')
     data = cariUsernameJin(UserData, BarisUser, usernameJin)
-    #print('data :',data[0])
 
     aksi = False
 
     if data[0] == True:
-        #print('dikerjakan')
 
         roleAwal = data[2]
         if roleAwal == 'Pengumpul':

@@ -38,6 +38,3 @@ def ayamberkokok(CandiData, BarisCandi):
     else :
         hasil = print(totalCandi, " \nYah, Bandung Bondowoso memenangkan permainan!")
     return hasil
-
-
-
