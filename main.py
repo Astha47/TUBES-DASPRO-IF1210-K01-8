@@ -82,7 +82,7 @@ if args.SaveGame:
     # Data Jumlah Baris dan Kolom
     BarisUser = 103
     KolomUser = 3
-    BarisCandi = 10001
+    BarisCandi = 101
     KolomCandi = 5
     BarisBBangunan = 4
     KolomBBangunan = 3
